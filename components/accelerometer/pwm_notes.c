@@ -17,7 +17,7 @@
 #define LEDC_TEST_DUTY         (20)
 #define LEDC_TEST_FADE_TIME    (3000)
 
-void app_main(void)
+void notes(void)
 {
     /*
      * Prepare and set configuration of timers
