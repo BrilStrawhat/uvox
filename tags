@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+Build and Flash	README.md	/^### Build and Flash$/;"	S
+Configure the project	README.md	/^### Configure the project$/;"	S
+Example Output	README.md	/^## Example Output$/;"	s
+Hardware Required	README.md	/^### Hardware Required$/;"	S
+How to use example	README.md	/^## How to use example$/;"	s
+LEDC_HS_CH0_CHANNEL	main/ledc_example_main.c	/^#define LEDC_HS_CH0_CHANNEL /;"	d	file:
+LEDC_HS_CH0_GPIO	main/ledc_example_main.c	/^#define LEDC_HS_CH0_GPIO /;"	d	file:
+LEDC_HS_CH1_CHANNEL	main/ledc_example_main.c	/^#define LEDC_HS_CH1_CHANNEL /;"	d	file:
+LEDC_HS_CH1_GPIO	main/ledc_example_main.c	/^#define LEDC_HS_CH1_GPIO /;"	d	file:
+LEDC_HS_MODE	main/ledc_example_main.c	/^#define LEDC_HS_MODE /;"	d	file:
+LEDC_HS_TIMER	main/ledc_example_main.c	/^#define LEDC_HS_TIMER /;"	d	file:
+LEDC_LS_CH0_CHANNEL	main/ledc_example_main.c	/^#define LEDC_LS_CH0_CHANNEL /;"	d	file:
+LEDC_LS_CH0_GPIO	main/ledc_example_main.c	/^#define LEDC_LS_CH0_GPIO /;"	d	file:
+LEDC_LS_CH1_CHANNEL	main/ledc_example_main.c	/^#define LEDC_LS_CH1_CHANNEL /;"	d	file:
+LEDC_LS_CH1_GPIO	main/ledc_example_main.c	/^#define LEDC_LS_CH1_GPIO /;"	d	file:
+LEDC_LS_CH2_CHANNEL	main/ledc_example_main.c	/^#define LEDC_LS_CH2_CHANNEL /;"	d	file:
+LEDC_LS_CH2_GPIO	main/ledc_example_main.c	/^#define LEDC_LS_CH2_GPIO /;"	d	file:
+LEDC_LS_CH3_CHANNEL	main/ledc_example_main.c	/^#define LEDC_LS_CH3_CHANNEL /;"	d	file:
+LEDC_LS_CH3_GPIO	main/ledc_example_main.c	/^#define LEDC_LS_CH3_GPIO /;"	d	file:
+LEDC_LS_MODE	main/ledc_example_main.c	/^#define LEDC_LS_MODE /;"	d	file:
+LEDC_LS_TIMER	main/ledc_example_main.c	/^#define LEDC_LS_TIMER /;"	d	file:
+LEDC_TEST_CH_NUM	main/ledc_example_main.c	/^#define LEDC_TEST_CH_NUM /;"	d	file:
+LEDC_TEST_DUTY	main/ledc_example_main.c	/^#define LEDC_TEST_DUTY /;"	d	file:
+LEDC_TEST_FADE_TIME	main/ledc_example_main.c	/^#define LEDC_TEST_FADE_TIME /;"	d	file:
+PROJECT_NAME	Makefile	/^PROJECT_NAME := ledc$/;"	m
+Troubleshooting	README.md	/^## Troubleshooting$/;"	s
+_LEDC Example_	README.md	/^# _LEDC Example_$/;"	c
+app_main	main/ledc_example_main.c	/^void app_main(void)$/;"	f	typeref:typename:void
+ledc	CMakeLists.txt	/^project(ledc)$/;"	p
