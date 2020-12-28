@@ -22,7 +22,7 @@
 #define B_1OCTAL_NOTE           493
 
 
-void pwm_notes(void) {
+void notes(uint16_t note, int i) {
     ledc_timer_config_t ledc_timer = {
         .duty_resolution = LEDC_TIMER_13_BIT, // resolution of PWM duty
         .freq_hz = B_NOTE,                      // frequency of PWM signal
@@ -42,12 +42,12 @@ void pwm_notes(void) {
     ledc_timer_config(&ledc_timer);
 
     int delay = 50;
-    int i = 0xff;
-    for (i = 0; i < 0xffff; i += 16) {
+    // int i = 0xff;
+    // for (i = 0; i < 0xffff; i += 16) {
         printf("%x\n", DEFAULT_DUTY + i);
         ledc_set_duty(ledc_channel.speed_mode, ledc_channel.channel, DEFAULT_DUTY + i);
         ledc_update_duty(ledc_channel.speed_mode, ledc_channel.channel);
-        ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, 494); 
+        ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, note); 
         vTaskDelay(delay /portTICK_PERIOD_MS);
         // // ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, Cis_1OCTAL_NOTE);
         // // vTaskDelay(delay /portTICK_PERIOD_MS);
@@ -58,5 +58,5 @@ void pwm_notes(void) {
         // // ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, A_1OCTAL_NOTE);
         // // vTaskDelay(delay /portTICK_PERIOD_MS);
         // // ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, B_1OCTAL_NOTE);
-    }
+    // }
 }

@@ -82,77 +82,74 @@ static void read_acceleration (spi_device_handle_t spi, int16_t *accs) {
     ESP_ERROR_CHECK(spi_device_polling_transmit(spi, &trans));
 }
 
-void small(int accel_data, int *note) {
+int small(int accel_data) {
     if(accel_data >= -42 && accel_data < 42) {
         printf("b\n");
-        *note = 1;
         return B_LINE_1;
     }
     else if (accel_data >= 42 && accel_data < 84) {
-        *note = -2;
         printf("cis\n");
         return A_LINE_1;
     }
     else if (accel_data >= 84  && accel_data < 126) {
-        *note = -3;
         printf("d\n");
         return FIS_LINE_1;
     }
     else if (accel_data >= 126  && accel_data < 168) {
-        *note = -4;
         printf("fis\n");
         return D_LINE_1;
     }
     else if (accel_data >= 168  && accel_data < 210) {
-        *note = -5;
         printf("a\n");
-        return DIS_LINE_1;
+        return CIS_LINE_1;
     }
     else if (accel_data >= 210) {
-        *note = -6;
         printf("bb\n");
-        return;
+        return B_SMALL;
     }
+    else
+        return 0;
 }
 
-int line_1(int accel_data, int *note) {
+int line_1(int accel_data) {
     if (accel_data <= -42 && accel_data > -84) {
-        *note = 2;
         printf("a_m\n");
         return CIS_LINE_2;
     }
     else if (accel_data <= -84 && accel_data > -126) {
-        *note = 3;
         printf("fis_m\n");
         return D_LINE_2;
     }
     else if (accel_data <= -126 && accel_data > -168) {
-        *note = 4;
         printf("d_m\n");
         return FIS_LINE_2;
     }
     else if (accel_data <= -168 && accel_data > -210) {
-        *note = 5;
         printf("cis_m\n");
         return A_LINE_2;
     }
     else if (accel_data <= -210) {
-        *note = 6;
         printf("b_m\n");
         return B_LINE_3;
     }
-    else
+    else {
         printf("bad arg\n");
+        return 0;
+    }
 }
 
-void pentatonic_mode(int accel_data, int *note) {
-    first_line(accel_data, note);
-    small(accel_data, note);
+int pentatonic_mode(int accel_data) {
+    int note = 0;
+
+    if ((note = line_1(accel_data)) != 0)
+        return note;
+    note = small(accel_data);
+    return note;
 }
 
-void chromatic_mode(int accel_data, int *note) {
+// void chromatic_mode(int accel_data, int *note) {
 
-}
+// }
 
 
 
@@ -162,14 +159,16 @@ void read_acceleration_task(void* pvParameters) {
     int16_t accs[3];
     spi_device_handle_t spi = (spi_device_handle_t)pvParameters;
     int note = 0;
+    int i = 0xf;
 
     while (1) {
         read_acceleration(spi, accs);
         printf("xyz %d      %d      %d\n", (int)accs[0], (int)accs[1], (int)accs[2]);
-        switch_notes((int)accs[0], &note);
+        note = pentatonic_mode((int)accs[0]);
         printf("note = %d\n", note);
-        vTaskDelay(1000 / portTICK_PERIOD_MS); // todo chek delay
-
+        i += 32;
+        notes(note, i);
+        vTaskDelay(100 / portTICK_PERIOD_MS); // todo chek delay
     }
 }
 

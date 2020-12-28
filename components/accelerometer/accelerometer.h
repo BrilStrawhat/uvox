@@ -39,5 +39,5 @@ void read_acceleration_task(void* pvParameters);
 void leds(int value);
 void beeep(void);
 void config_leds_and_beeep();
-void notes(void);
+void notes(uint16_t note, int i);
 #endif
