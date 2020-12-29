@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7959a442-8590-419b-a2b0-286f35eb0dec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/accelerometer/chromatic_made.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/accelerometer/leds.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/accelerometer/pentatonic_mode.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accelerometer/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accelerometer/accelerometer.h" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/accelerometer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accelerometer/accelerometr.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/accelerometr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accelerometer/leds_beep.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accelerometer/pwm_notes.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/pwm_notes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mIpsojDQta7ei3nZYWAHli64Hg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7959a442-8590-419b-a2b0-286f35eb0dec" name="Default Changelist" comment="" />
+      <created>1609191168962</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609191168962</updated>
+      <workItem from="1609191170073" duration="5730000" />
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "driver/ledc.h"
-#include "esp_err.h"
+#include "accelerometer.h"
 
 #define LEDC_CHANNEL_1          3
 #define LEDC_LS_CH1_GPIO        25
@@ -22,7 +18,7 @@
 #define B_1OCTAL_NOTE           493
 
 
-void pwm_notes(void) {
+void pwm_notes(int nota) {
     ledc_timer_config_t ledc_timer = {
         .duty_resolution = LEDC_TIMER_13_BIT, // resolution of PWM duty
         .freq_hz = B_NOTE,                      // frequency of PWM signal
@@ -44,12 +40,12 @@ void pwm_notes(void) {
     int delay = 50;
     int i = 0xff;
     for (i = 0; i < 0xffff; i += 16) {
-        printf("%x\n", DEFAULT_DUTY + i);
+//        printf("%x\n", DEFAULT_DUTY + i);
         ledc_set_duty(ledc_channel.speed_mode, ledc_channel.channel, DEFAULT_DUTY + i);
         ledc_update_duty(ledc_channel.speed_mode, ledc_channel.channel);
-        ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, 494); 
+        ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, nota);
         vTaskDelay(delay /portTICK_PERIOD_MS);
-        // // ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, Cis_1OCTAL_NOTE);
+//          ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, Cis_1OCTAL_NOTE);
         // // vTaskDelay(delay /portTICK_PERIOD_MS);
         // ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, D_1OCTAL_NOTE);
         // vTaskDelay(delay /portTICK_PERIOD_MS);
