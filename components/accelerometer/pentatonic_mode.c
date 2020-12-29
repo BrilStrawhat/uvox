@@ -27,7 +27,6 @@ static int line_1(int accel_data) {
         return B_SMALL;
     }
     else {
-        printf("Note not found\n");
         return 0;
     }
 }

@@ -55,31 +55,31 @@ static void read_acceleration (spi_device_handle_t spi, int16_t *accs) {
 }
 
 
-void leds_set_frequency(int value) {
-    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_26, value));
-    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_27, value));
-    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_33, value));
-}
 
 void read_acceleration_task(void* pvParameters) {
-    int16_t accs[3];
-    spi_device_handle_t spi = (spi_device_handle_t)pvParameters;
-    int note = 0;
-
     ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_26, GPIO_MODE_OUTPUT));
     ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_27, GPIO_MODE_OUTPUT));
     ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_33, GPIO_MODE_OUTPUT));
+    t_display *display = malloc(sizeof(t_display));
+    oled_init(display);
 
+    int16_t accs[3];
+    spi_device_handle_t spi = (spi_device_handle_t)pvParameters;
+    int note = 0;
+    int i = 0xff;
+    char *note_to_oled = malloc(10);
 
     while (1) {
+        memset(note_to_oled, 0, 10);
         read_acceleration(spi, accs);
         printf("xyz %d      %d      %d\n", (int)accs[0], (int)accs[1], (int)accs[2]);
-        note = chromatic_mode((int)accs[0]);
-        printf("note = %d\n", note);
-//        leds_set_frequency(note);
-        pwm_notes(note);
-        vTaskDelay(1000 / portTICK_PERIOD_MS); // todo chek delay
-
+        note = chromatic_mode((int)accs[0], &note_to_oled);
+//        printf("note = %d\n", note);
+//        printf("note = %s\n", note_to_oled);
+//        notes(note, i);
+        pwm_leds(((int)accs[0]), i);
+        oled_clear(display);
+        send_to_oled(display, note_to_oled, "");
+        vTaskDelay(50 / portTICK_PERIOD_MS); // todo chek delay
     }
 }
-

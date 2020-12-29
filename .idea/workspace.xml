@@ -10,14 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7959a442-8590-419b-a2b0-286f35eb0dec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/accelerometer/chromatic_made.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/accelerometer/leds.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/accelerometer/pentatonic_mode.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/accelerometer/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/accelerometer/accelerometer.h" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/accelerometer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/accelerometer/accelerometr.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/accelerometr.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/accelerometer/leds_beep.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accelerometer/chromatic_made.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/chromatic_mode.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accelerometer/leds.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/leds.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accelerometer/pentatonic_mode.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/pentatonic_mode.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/accelerometer/pwm_notes.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/pwm_notes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609191168962</updated>
-      <workItem from="1609191170073" duration="5730000" />
+      <workItem from="1609191170073" duration="22014000" />
     </task>
     <servers />
   </component>
