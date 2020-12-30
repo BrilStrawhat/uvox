@@ -78,25 +78,22 @@ void read_acceleration_task(void* pvParameters) {
         read_acceleration(spi, accs);
         printf("xyz %d      %d      %d\n", (int) accs[0], (int) accs[1], (int) accs[2]);
 //        note = chromatic_mode((int)accs[0], &note_to_oled);
-        pwm_leds(((int) accs[0]));
-        oled_clear(display);
-        send_to_oled(display, note_to_oled, NULL); // NULL - for duty
 
-        if (xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
-            if (io_num == GPIO_INPUT_IO_0)
-                note = pentatonic_mode((accs[0]), &note_to_oled);
-            if (old_note != note) {
-                notes(note, accs[1]);
-                old_note = note;
-            }
-            while (xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
-                if (io_num == GPIO_INPUT_IO_0 && delay < 65500)
-                    delay += 50;
-                else if (delay > 0)
-                    delay -= 50;
-            }
-            vTaskDelay(delay / portTICK_PERIOD_MS);
+        note = pentatonic_mode((accs[0]), &note_to_oled);
+        if (old_note != note) {
+            notes(note, accs[1]);
+            pwm_leds(((int) accs[0]));
+            oled_clear(display);
+            send_to_oled(display, note_to_oled, NULL); // NULL - for duty
+            old_note = note;
         }
+        while (xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
+            if (io_num == GPIO_INPUT_IO_0 && delay < 65500)
+                delay += 50;
+            else if (delay > 0)
+                delay -= 50;
+        }
+        vTaskDelay(delay / portTICK_PERIOD_MS);
     }
 }
 
