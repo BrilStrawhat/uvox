@@ -1,28 +1,34 @@
 #include "accelerometer.h"
 
 
-static int line_1(int accel_data) {
+static int line_1(int accel_data, char **note) {
     if(accel_data >= -42 && accel_data < 42) {
+        sprintf(*note, "B");
         printf("B_LINE_1\n");
         return B_LINE_1;
     }
     else if (accel_data >= 42 && accel_data < 84) {
+        sprintf(*note, "A");
         printf("A_LINE_1\n");
         return A_LINE_1;
     }
     else if (accel_data >= 84  && accel_data < 126) {
+        sprintf(*note, "FIS");
         printf("FIS_LINE_1\n");
         return FIS_LINE_1;
     }
     else if (accel_data >= 126  && accel_data < 168) {
+        sprintf(*note, "D");
         printf("D_LINE_1\n");
         return D_LINE_1;
     }
     else if (accel_data >= 168  && accel_data < 210) {
+        sprintf(*note, "CIS");
         printf("CIS_LINE_1\n");
-        return DIS_LINE_1;
+        return CIS_LINE_1;
     }
     else if (accel_data >= 210) {
+        sprintf(*note, "B");
         printf("B_SMALL\n");
         return B_SMALL;
     }
@@ -31,24 +37,29 @@ static int line_1(int accel_data) {
     }
 }
 
-static int line_2(int accel_data) {
+static int line_2(int accel_data, char **note) {
     if (accel_data <= -42 && accel_data > -84) {
+        sprintf(*note, "CIS");
         printf("CIS_LINE_2\n");
         return CIS_LINE_2;
     }
     else if (accel_data <= -84 && accel_data > -126) {
+        sprintf(*note, "D");
         printf("D_LINE_2\n");
         return D_LINE_2;
     }
     else if (accel_data <= -126 && accel_data > -168) {
+        sprintf(*note, "FIS");
         printf("FIS_LINE_2\n");
         return FIS_LINE_2;
     }
     else if (accel_data <= -168 && accel_data > -210) {
+        sprintf(*note, "A");
         printf("A_LINE_2\n");
         return A_LINE_2;
     }
     else if (accel_data <= -210) {
+        sprintf(*note, "B");
         printf("B_LINE_3\n");
         return B_LINE_3;
     }
@@ -57,12 +68,13 @@ static int line_2(int accel_data) {
     }
 }
 
-int pentatonic_mode(int accel_data) {
-    int note = 0;
+int pentatonic_mode(int accel_data, char **note) {
+    int frequency = 0;
+    printf("str = %s\n", *note);
 
-    note = line_1(accel_data);
-    if (!note)
-        note = line_2(accel_data);
-    return note;
+    frequency = line_1(accel_data, note);
+    if (!frequency)
+        frequency = line_2(accel_data, note);
+    return frequency;
 
 }

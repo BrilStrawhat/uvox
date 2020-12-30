@@ -41,20 +41,10 @@ static void init_timer_chanel(ledc_timer_config_t *ledc_timer,
 }
 
 static void PWM_method(ledc_channel_config_t *ledc_channel, int duty, int i) {
-    if (duty > 0) {
-        duty = (duty < -250) ? -249 : duty;
-        duty = duty + 250;
-    }
-    else if (duty == 0) {
-        duty += 250;
-    }
-    else if (duty < 0) {
-        duty += 250;
-    }
-    else if (duty > 500) {
-        duty = 250;
-    }
-
+    duty = -duty;
+    duty = (duty < -250) ? -250 : duty;
+    duty = (duty > 250) ? 250 : duty;
+    duty += 252;
     duty = duty / 2;
     printf("duty = %d\n" ,duty);
 
@@ -73,7 +63,5 @@ void pwm_leds(int duty, int i) {
     init_timer_chanel(&ledc_timer[0], &ledc_channel[0], LEDC_HS_CH0_GPIO, LEDC_HS_CH0_CHANNEL);
     init_timer_chanel(&ledc_timer[1], &ledc_channel[1], LEDC_HS_CH1_GPIO, LEDC_HS_CH0_CHANNEL);
     init_timer_chanel(&ledc_timer[2], &ledc_channel[2], LEDC_HS_CH2_GPIO, LEDC_HS_CH0_CHANNEL);
-
-    printf("duty = %d\n", duty);
     PWM_method(&ledc_channel[0], duty, i);
 }

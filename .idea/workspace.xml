@@ -10,15 +10,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7959a442-8590-419b-a2b0-286f35eb0dec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/buttons/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/buttons/buttons.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/buttons/buttons.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.bin_timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/build/.bin_timestamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/build/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/build/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/git-data/head-ref" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/git-data/head-ref" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/accelerometer.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/accelerometer.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bootloader/.bin_timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/build/bootloader/.bin_timestamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bootloader/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/build/bootloader/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bootloader/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/build/bootloader/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bootloader/bootloader.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/bootloader/bootloader.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bootloader/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/build/bootloader/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/build/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/esp-idf/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/esp-idf/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ldgen_libraries" beforeDir="false" afterPath="$PROJECT_DIR$/build/ldgen_libraries" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ldgen_libraries.in" beforeDir="false" afterPath="$PROJECT_DIR$/build/ldgen_libraries.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/project_description.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/project_description.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/accelerometer/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accelerometer/accelerometer.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/accelerometer.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/accelerometer/accelerometer.h" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/accelerometer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/accelerometer/accelerometr.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/accelerometr.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/accelerometer/chromatic_made.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/chromatic_mode.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accelerometer/accelerometr.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/accelerometer/leds.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/leds.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/accelerometer/pentatonic_mode.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/pentatonic_mode.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/accelerometer/pwm_notes.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/accelerometer/pwm_notes.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/oled/oled.c" beforeDir="false" afterPath="$PROJECT_DIR$/components/oled/oled.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +65,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/main" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -57,8 +87,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609191168962</updated>
-      <workItem from="1609191170073" duration="22014000" />
+      <workItem from="1609191170073" duration="24685000" />
+      <workItem from="1609326471256" duration="2970000" />
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1609328139170">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1609328139170" />
   </component>
 </project>

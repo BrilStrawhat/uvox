@@ -34,14 +34,16 @@ void AsciiStr_to_font8x16(char *str, t_display *display, int shift, int font_str
 
 
 void write_to_buffer(t_display *display, char *str1, char *str2) {
-    int mid_str = (SCREEN_WIDTH - strlen(str1) * 8);
-    int font_str_intdex = mid_str > 0 ?  (mid_str / 2) + SCREEN_WIDTH * 2 : SCREEN_WIDTH * 2;
-    int str2_index = (SCREEN_WIDTH - strlen(str2) * 6) / 2;
-
-    AsciiStr_to_font8x16(str1, display, 0, font_str_intdex);
-    AsciiStr_to_font8x16(str1, display, 8, font_str_intdex + SCREEN_WIDTH);
-    AsciiStr_to_font6x8(str2, display, str2_index + (SCREEN_WIDTH * 6));
-
+    if (str1) {
+        int mid_str = (SCREEN_WIDTH - strlen(str1) * 8);
+        int font_str_intdex = mid_str > 0 ? (mid_str / 2) + SCREEN_WIDTH * 2 : SCREEN_WIDTH * 2;
+        AsciiStr_to_font8x16(str1, display, 0, font_str_intdex);
+        AsciiStr_to_font8x16(str1, display, 8, font_str_intdex + SCREEN_WIDTH);
+    }
+    if (str2) {
+        int str2_index = (SCREEN_WIDTH - strlen(str2) * 6) / 2;
+        AsciiStr_to_font6x8(str2, display, str2_index + (SCREEN_WIDTH * 6));
+    }
 }
 
 void send_to_oled(t_display *display, char *str1, char *str2) {

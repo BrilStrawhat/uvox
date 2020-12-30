@@ -24,12 +24,12 @@
 #include "driver/spi_master.h"
 #include "components.h"
 #include "oled.h"
+#include "buttons.h"
 
 void accel_config(spi_device_handle_t *spi);
 void read_acceleration_task(void* pvParameters);
-int pentatonic_mode(int accel_data);
-int chromatic_mode(int accel_data,  char *note[]);
-void notes(uint16_t note, int i);
 void pwm_leds(int duty, int i);
-
+int chromatic_mode(int accel_data,  char **note);
+int pentatonic_mode(int accel_data, char **note);
+void notes(int16_t freq, int16_t  duty);
 #endif
