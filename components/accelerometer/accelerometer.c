@@ -1,34 +1,6 @@
 #include "accelerometer.h"
 #include "buttons.h"
 
-#define B_SMALL         123
-#define C_LINE_1        131
-#define CIS_LINE_1      138
-#define D_LINE_1        147
-#define DIS_LINE_1      155
-#define E_LINE_1        165
-#define EIS_LINE_1      175
-#define FIS_LINE_1      185
-#define G_LINE_1        196
-#define GIS_LINE_1      208
-#define A_LINE_1        220
-#define AIS_LINE_1      233
-#define B_LINE_1        246
-#define C_LINE_2        262
-#define CIS_LINE_2      277
-#define D_LINE_2        294
-#define DIS_LINE_2      311
-#define E_LINE_2        330
-#define EIS_LINE_2      349
-#define FIS_LINE_2      370
-#define G_LINE_2        392
-#define GIS_LINE_2      415
-#define A_LINE_2        440
-#define AIS_LINE_2      466
-#define B_LINE_3        494
-
-
-
 static void print_error(char *str) {
     write(2, str, strlen(str));
 }
@@ -83,102 +55,46 @@ static void read_acceleration (spi_device_handle_t spi, int16_t *accs) {
     ESP_ERROR_CHECK(spi_device_polling_transmit(spi, &trans));
 }
 
-int small(int accel_data) {
-    if(accel_data >= -42 && accel_data < 42) {
-        printf("b\n");
-        return B_LINE_1;
-    }
-    else if (accel_data >= 42 && accel_data < 84) {
-        printf("cis\n");
-        return A_LINE_1;
-    }
-    else if (accel_data >= 84  && accel_data < 126) {
-        printf("d\n");
-        return FIS_LINE_1;
-    }
-    else if (accel_data >= 126  && accel_data < 168) {
-        printf("fis\n");
-        return D_LINE_1;
-    }
-    else if (accel_data >= 168  && accel_data < 210) {
-        printf("a\n");
-        return CIS_LINE_1;
-    }
-    else if (accel_data >= 210) {
-        printf("bb\n");
-        return B_SMALL;
-    }
-    else
-        return 0;
-}
-
-int line_1(int accel_data) {
-    if (accel_data <= -42 && accel_data > -84) {
-        printf("a_m\n");
-        return CIS_LINE_2;
-    }
-    else if (accel_data <= -84 && accel_data > -126) {
-        printf("fis_m\n");
-        return D_LINE_2;
-    }
-    else if (accel_data <= -126 && accel_data > -168) {
-        printf("d_m\n");
-        return FIS_LINE_2;
-    }
-    else if (accel_data <= -168 && accel_data > -210) {
-        printf("cis_m\n");
-        return A_LINE_2;
-    }
-    else if (accel_data <= -210) {
-        printf("b_m\n");
-        return B_LINE_3;
-    }
-    else {
-        printf("bad arg\n");
-        return 0;
-    }
-}
-
-int pentatonic_mode(int accel_data) {
-    int note = 0;
-
-    if ((note = line_1(accel_data)) != 0)
-        return note;
-    note = small(accel_data);
-    return note;
-}
-
-// void chromatic_mode(int accel_data, int *note) {
-
-// }
-
-
 
 
 
 void read_acceleration_task(void* pvParameters) {
+    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_26, GPIO_MODE_OUTPUT));
+    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_27, GPIO_MODE_OUTPUT));
+    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_33, GPIO_MODE_OUTPUT));
+    t_display *display = malloc(sizeof(t_display));
+    oled_init(display);
     int16_t accs[3];
-    spi_device_handle_t spi = (spi_device_handle_t)pvParameters;
+    spi_device_handle_t spi = (spi_device_handle_t) pvParameters;
+    char *note_to_oled = malloc(2);
     uint16_t note = 0;
     uint16_t old_note = 0;
     uint16_t delay = 500;
     uint8_t io_num;
 
+
     while (1) {
+        memset(note_to_oled, 0, 2);
         read_acceleration(spi, accs);
-        note = pentatonic_mode((int)accs[0]);
+        printf("xyz %d      %d      %d\n", (int) accs[0], (int) accs[1], (int) accs[2]);
+//        note = chromatic_mode((int)accs[0], &note_to_oled);
+
+        note = pentatonic_mode((accs[0]), &note_to_oled);
         if (old_note != note) {
             notes(note, accs[1]);
+            pwm_leds(((int) accs[0]));
+            oled_clear(display);
+            send_to_oled(display, note_to_oled, NULL); // NULL - for duty
             old_note = note;
         }
-        while(xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
+        while (xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
             if (io_num == GPIO_INPUT_IO_0 && delay < 65500)
                 delay += 50;
             else if (delay > 0)
                 delay -= 50;
         }
-        // printf("%d\n", delay);
         vTaskDelay(delay / portTICK_PERIOD_MS);
     }
 }
+
 

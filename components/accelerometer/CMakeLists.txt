@@ -1,4 +1,4 @@
-idf_component_register(SRCS "accelerometer.c" "pwm_notes.c"
-                       INCLUDE_DIRS "."
-                       REQUIRES buttons)
+idf_component_register(SRCS "accelerometer.c" "leds.c" "pwm_notes.c" "pentatonic_mode.c" "chromatic_mode.c"
+                        REQUIRES include oled buttons
+                        INCLUDE_DIRS ".")
 

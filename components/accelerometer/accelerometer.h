@@ -21,23 +21,16 @@
 #define REG_DATAX0          0x32u
 #define UPDATE_DELAY        (200u / portTICK_PERIOD_MS)
 
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "esp_system.h"
 #include "driver/spi_master.h"
-#include "driver/gpio.h"
-#include "esp_err.h"
-#include <driver/dac.h>
+#include "components.h"
+#include "oled.h"
+#include "buttons.h"
 
 void accel_config(spi_device_handle_t *spi);
 void read_acceleration_task(void* pvParameters);
-void leds(int value);
-void beeep(void);
-void config_leds_and_beeep();
+void pwm_leds(int16_t  duty);
+int chromatic_mode(int16_t accel_data,  char **note);
+int pentatonic_mode(int16_t accel_data, char **note);
 void notes(int16_t freq, int16_t  duty);
+
 #endif
