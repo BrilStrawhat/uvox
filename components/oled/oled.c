@@ -125,7 +125,7 @@ void oled_init(t_display *display) {
     ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_32, GPIO_MODE_OUTPUT));
     ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_32, 1));
     display->font_str = (uint8_t*)malloc(sizeof(uint8_t) * (128 * 8));
-    bzero(display->font_str, SCREEN_SIZE);
+    memset(display->font_str, 0, SCREEN_SIZE);
     display->addr = I2C_ADDR;
     display->port = I2C_PORT;
     oled_config(display);

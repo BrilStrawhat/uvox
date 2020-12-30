@@ -18,7 +18,7 @@
 
 
 static void init_timer_chanel(ledc_timer_config_t *ledc_timer,
-                       ledc_channel_config_t *ledc_channel, int led_num, int channel) {
+                       ledc_channel_config_t *ledc_channel, uint8_t led_num, uint8_t channel) {
     *ledc_timer = (ledc_timer_config_t){
             .duty_resolution = LEDC_TIMER_8_BIT,
             .freq_hz =  246,
@@ -40,7 +40,7 @@ static void init_timer_chanel(ledc_timer_config_t *ledc_timer,
 
 }
 
-static void PWM_method(ledc_channel_config_t *ledc_channel, int duty, int i) {
+static void PWM_method(ledc_channel_config_t *ledc_channel, int16_t  duty, int16_t  i) {
     duty = -duty;
     duty = (duty < -250) ? -250 : duty;
     duty = (duty > 250) ? 250 : duty;
@@ -57,7 +57,7 @@ static void PWM_method(ledc_channel_config_t *ledc_channel, int duty, int i) {
     vTaskDelay(30 / portTICK_PERIOD_MS);
 }
 
-void pwm_leds(int duty, int i) {
+void pwm_leds(int16_t duty, int16_t i) {
     ledc_timer_config_t ledc_timer[LEDC_TEST_CH_NUM];
     ledc_channel_config_t ledc_channel[LEDC_TEST_CH_NUM];
     init_timer_chanel(&ledc_timer[0], &ledc_channel[0], LEDC_HS_CH0_GPIO, LEDC_HS_CH0_CHANNEL);

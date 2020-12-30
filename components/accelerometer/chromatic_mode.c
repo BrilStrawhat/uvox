@@ -1,6 +1,6 @@
 #include "accelerometer.h"
 
-static int line_1(int accel_data, char **note) {
+static int line_1(int16_t accel_data, char **note) {
     if(accel_data >= -10 && accel_data < 10) {
         sprintf(*note, "B");
         printf("B_LINE_1\n");
@@ -72,7 +72,7 @@ static int line_1(int accel_data, char **note) {
 }
 
 
-static int line_2(int accel_data,  char **note) {
+static int line_2(int16_t accel_data,  char **note) {
   if (accel_data <= -10 && accel_data > -30) {
         sprintf(*note, "C");
         printf("C_LINE_2\n");
@@ -139,7 +139,7 @@ static int line_2(int accel_data,  char **note) {
     }
 }
 
-int chromatic_mode(int accel_data,  char **note) {
+int chromatic_mode(int16_t accel_data,  char **note) {
     int frequency = 0;
     printf("str = %s\n", *note);
     frequency = line_1(accel_data, note);

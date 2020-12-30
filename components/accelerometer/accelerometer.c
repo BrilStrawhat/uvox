@@ -68,7 +68,7 @@ void read_acceleration_task(void* pvParameters) {
     spi_device_handle_t spi = (spi_device_handle_t)pvParameters;
     int note = 0;
     int i = 0xff;
-    char note_to_oled[2];
+    char *note_to_oled = malloc(2);
     uint16_t delay = 1000;
     uint32_t io_num;
 
@@ -76,8 +76,11 @@ void read_acceleration_task(void* pvParameters) {
         memset(note_to_oled, 0, 2);
         read_acceleration(spi, accs);
         printf("xyz %d      %d      %d\n", (int)accs[0], (int)accs[1], (int)accs[2]);
+        note = pentatonic_mode(accs[0], &note_to_oled);
+        printf("\nnote = %s\n", note_to_oled);
 //        note = chromatic_mode((int)accs[0], &note_to_oled);
-        note = pentatonic_mode((int)accs[0], &note_to_oled);
+
+        printf("note  = %s\n", note_to_oled);
         pwm_leds(((int)accs[0]), i);
         oled_clear(display);
         send_to_oled(display, note_to_oled, NULL); // NULL - for duty
