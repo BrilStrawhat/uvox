@@ -1,5 +1,14 @@
+# MacOS files 
+.DS_Store
+
 # Vim files
 *.swp
+
+# CLion files
+.idea/*
+
+# esp-idf files
+build/*
 
 # Prerequisites
 *.d
