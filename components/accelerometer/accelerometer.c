@@ -159,23 +159,25 @@ int pentatonic_mode(int accel_data) {
 void read_acceleration_task(void* pvParameters) {
     int16_t accs[3];
     spi_device_handle_t spi = (spi_device_handle_t)pvParameters;
-    int note = 0;
-    uint16_t delay = 1000;
-    uint32_t io_num;
+    uint16_t note = 0;
+    uint16_t old_note = 0;
+    uint16_t delay = 500;
+    uint8_t io_num;
 
     while (1) {
         read_acceleration(spi, accs);
-        // printf("xyz %d      %d      %d\n", (int)accs[0], (int)accs[1], (int)accs[2]);
         note = pentatonic_mode((int)accs[0]);
-        // printf("note = %d accs[1] = %d\n", note, accs[1]);
-        notes(note, accs[1]);
-        if(xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
-            if (io_num == GPIO_INPUT_IO_0)
+        if (old_note != note) {
+            notes(note, accs[1]);
+            old_note = note;
+        }
+        while(xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
+            if (io_num == GPIO_INPUT_IO_0 && delay < 65500)
                 delay += 50;
-            else
+            else if (delay > 0)
                 delay -= 50;
         }
-        printf("%d\n", delay);
+        // printf("%d\n", delay);
         vTaskDelay(delay / portTICK_PERIOD_MS);
     }
 }
