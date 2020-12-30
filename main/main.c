@@ -1,6 +1,8 @@
 #include "accelerometer.h"
 #include "main.h"
 #include "buttons.h"
+#include "wifi.h"
+#include "uart_console.h"
 
 void app_main(void) {
     spi_device_handle_t spi;
