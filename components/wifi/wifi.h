@@ -17,6 +17,8 @@
 #include "uart_console.h"
 
 #define WIFI_STA_CONNECT_COMMAND "aa"
+#define MAX_RECONNECT_TRY     1
+#define WIFI_CREDENTIAL_DELIM ';'
 
 /* The event group allows multiple bits for each event, but we only care about two events:
  * - we are connected to the AP with an IP

@@ -1,8 +1,5 @@
 #include "wifi.h"
 
-#define MAX_RECONNECT_TRY     1
-#define WIFI_CREDENTIAL_DELIM ' '
-
 /* FreeRTOS event group to signal when we are connected*/
 static EventGroupHandle_t s_wifi_event_group = NULL;
 static uint8_t s_retry_num = 0;
@@ -139,7 +136,7 @@ static void wifi_init_sta(char *ssid, char *passwd) {
                                                             &event_handler,
                                                             NULL,
                                                             &instance_got_ip));
-        ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+        ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );
         ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
         ESP_ERROR_CHECK(esp_wifi_start());
 
@@ -152,11 +149,11 @@ static void wifi_init_sta(char *ssid, char *passwd) {
                 pdFALSE,
                 0);
         if (bits & WIFI_CONNECTED_BIT) {
-            esp_wifi_disconnect();
             xEventGroupClearBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
+            esp_wifi_disconnect();
         }
-        esp_wifi_connect();
         ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
+        esp_wifi_connect();
     }
 
     /* Waiting until either the connection is established (WIFI_CONNECTED_BIT) or connection failed for the maximum
@@ -200,7 +197,7 @@ uint8_t wifi_connect_nvs(void) {
     nvs_handle_t nvs_handle;
     size_t length = 97;
     char *saveptr = NULL;
-    char delim = ' ';
+    char delim = WIFI_CREDENTIAL_DELIM;
     char *ssid = NULL;
     char *passwd = NULL;
 
@@ -240,17 +237,36 @@ void *wifi_sta_connect(void *arg) {
         wifi_init_sta("TP-Link_FF9C", "01431629");
         return NULL;
     }
+    else if (!strcmp("unit", (char*)arg)) {
+        wifi_init_sta("ucode student", ">#ucodeworld");
+        return NULL;
+    }
     else {
+        char delim;
         char *saveptr = NULL;
-        char delim = ' ';
-        char *ssid = strtok_r((char*)arg, &delim, &saveptr);
-        char *passwd = strtok_r(NULL, &delim, &saveptr);
+        char *ssid = NULL;
+        char *passwd = NULL;
 
+        if (strchr((char*)arg, '"') != NULL) {
+            delim = '"';
+            ssid = strtok_r((char*)arg, &delim, &saveptr);
+            passwd = strtok_r(NULL, &delim, &saveptr); // idk why, but I must put result somewhere or it would not works
+            passwd = strtok_r(NULL, &delim, &saveptr); 
+        }
+        else {
+            delim = ' ';
+            ssid = strtok_r((char*)arg, &delim, &saveptr);
+            passwd = strtok_r(NULL, &delim, &saveptr);
+        }
+
+        if (ssid != NULL)
+            printf("ssid %s\n", ssid);
+        if (passwd != NULL)
+            printf("passwd%s\n", passwd);
         if (ssid && passwd && !strtok_r(NULL, &delim, &saveptr))
             wifi_init_sta(ssid, passwd);
         else {
-            uart_print_nl();
-            uart_printstr("wifi_connect usage: ssid passwd");
+            uart_printstr("wifi_connect usage: \"ssid\" \"passwd\"");
         }
     }
     return NULL;
