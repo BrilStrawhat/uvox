@@ -40,7 +40,7 @@ static void init_timer_chanel(ledc_timer_config_t *ledc_timer,
 
 }
 
-static void PWM_method(ledc_channel_config_t *ledc_channel, int16_t  duty, int16_t  i) {
+static void PWM_method(ledc_channel_config_t *ledc_channel, int16_t  duty) {
     duty = -duty;
     duty = (duty < -250) ? -250 : duty;
     duty = (duty > 250) ? 250 : duty;
@@ -57,11 +57,11 @@ static void PWM_method(ledc_channel_config_t *ledc_channel, int16_t  duty, int16
     vTaskDelay(30 / portTICK_PERIOD_MS);
 }
 
-void pwm_leds(int16_t duty, int16_t i) {
+void pwm_leds(int16_t duty) {
     ledc_timer_config_t ledc_timer[LEDC_TEST_CH_NUM];
     ledc_channel_config_t ledc_channel[LEDC_TEST_CH_NUM];
     init_timer_chanel(&ledc_timer[0], &ledc_channel[0], LEDC_HS_CH0_GPIO, LEDC_HS_CH0_CHANNEL);
     init_timer_chanel(&ledc_timer[1], &ledc_channel[1], LEDC_HS_CH1_GPIO, LEDC_HS_CH0_CHANNEL);
     init_timer_chanel(&ledc_timer[2], &ledc_channel[2], LEDC_HS_CH2_GPIO, LEDC_HS_CH0_CHANNEL);
-    PWM_method(&ledc_channel[0], duty, i);
+    PWM_method(&ledc_channel[0], duty);
 }

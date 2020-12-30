@@ -65,34 +65,39 @@ void read_acceleration_task(void* pvParameters) {
     t_display *display = malloc(sizeof(t_display));
     oled_init(display);
     int16_t accs[3];
-    spi_device_handle_t spi = (spi_device_handle_t)pvParameters;
-    int note = 0;
-    int i = 0xff;
+    spi_device_handle_t spi = (spi_device_handle_t) pvParameters;
     char *note_to_oled = malloc(2);
-    uint16_t delay = 1000;
-    uint32_t io_num;
+    uint16_t note = 0;
+    uint16_t old_note = 0;
+    uint16_t delay = 500;
+    uint8_t io_num;
+
 
     while (1) {
         memset(note_to_oled, 0, 2);
         read_acceleration(spi, accs);
-        printf("xyz %d      %d      %d\n", (int)accs[0], (int)accs[1], (int)accs[2]);
-        note = pentatonic_mode(accs[0], &note_to_oled);
-        printf("\nnote = %s\n", note_to_oled);
+        printf("xyz %d      %d      %d\n", (int) accs[0], (int) accs[1], (int) accs[2]);
 //        note = chromatic_mode((int)accs[0], &note_to_oled);
-
-        printf("note  = %s\n", note_to_oled);
-        pwm_leds(((int)accs[0]), i);
+        pwm_leds(((int) accs[0]));
         oled_clear(display);
         send_to_oled(display, note_to_oled, NULL); // NULL - for duty
 
-        notes(note, accs[1]);
-        if(xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
+        if (xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
             if (io_num == GPIO_INPUT_IO_0)
-                delay += 50;
-            else
-                delay -= 50;
+                note = pentatonic_mode((accs[0]), &note_to_oled);
+            if (old_note != note) {
+                notes(note, accs[1]);
+                old_note = note;
+            }
+            while (xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
+                if (io_num == GPIO_INPUT_IO_0 && delay < 65500)
+                    delay += 50;
+                else if (delay > 0)
+                    delay -= 50;
+            }
+            vTaskDelay(delay / portTICK_PERIOD_MS);
         }
-        printf("%d\n", delay);
-        vTaskDelay(delay / portTICK_PERIOD_MS);
     }
 }
+
+
