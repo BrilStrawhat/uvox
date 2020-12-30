@@ -90,6 +90,6 @@ void read_acceleration_task(void* pvParameters) {
                 delay -= 50;
         }
         printf("%d\n", delay);
-        vTaskDelay(1550/ portTICK_PERIOD_MS);
+        vTaskDelay(delay/ portTICK_PERIOD_MS);
     }
 }
