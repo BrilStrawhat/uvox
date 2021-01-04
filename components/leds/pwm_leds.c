@@ -1,25 +1,16 @@
 #include "leds.h"
 
-static void init_timer_chanel(ledc_timer_config_t *ledc_timer,
-                       ledc_channel_config_t *ledc_channel, uint8_t led_num, uint8_t channel) {
-    *ledc_timer = (ledc_timer_config_t){
-            .duty_resolution = LEDC_TIMER_8_BIT,
-            .freq_hz =  246,
-            .speed_mode = LEDC_HIGH_SPEED_MODE,
-            .timer_num =  LEDC_TIMER_0,
-            .clk_cfg = LEDC_AUTO_CLK,
-    };
+static void init_timer_chanel(ledc_channel_config_t *ledc_channel,
+                              uint8_t led_num) {
     *ledc_channel = (ledc_channel_config_t){
-            .channel    = channel,
+            .channel    = LEDC_HS_CH0_CHANNEL,
             .duty       = 1,
             .gpio_num   = led_num,
             .speed_mode = LEDC_HIGH_SPEED_MODE,
             .hpoint     = 0,
             .timer_sel  = LEDC_TIMER_0
     };
-    ledc_timer_config(ledc_timer);
     ledc_channel_config(ledc_channel);
-
 }
 
 static void pwm_leds(ledc_channel_config_t *ledc_channel, int16_t duty) {
@@ -38,22 +29,25 @@ static void pwm_leds(ledc_channel_config_t *ledc_channel, int16_t duty) {
     vTaskDelay(30 / portTICK_PERIOD_MS);
 }
 
-
 void leds_on(void *arg) {
     t_app *app = (t_app *)arg;
-    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_26, GPIO_MODE_OUTPUT));
-    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_27, GPIO_MODE_OUTPUT));
-    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_33, GPIO_MODE_OUTPUT));
 
-    ledc_timer_config_t ledc_timer[LEDC_TEST_CH_NUM];
-    ledc_channel_config_t ledc_channel[LEDC_TEST_CH_NUM];
-    init_timer_chanel(&ledc_timer[0], &ledc_channel[0], LEDC_HS_CH0_GPIO, LEDC_HS_CH0_CHANNEL);
-    init_timer_chanel(&ledc_timer[1], &ledc_channel[1], LEDC_HS_CH1_GPIO, LEDC_HS_CH0_CHANNEL);
-    init_timer_chanel(&ledc_timer[2], &ledc_channel[2], LEDC_HS_CH2_GPIO, LEDC_HS_CH0_CHANNEL);
+    ledc_channel_config_t ledc_channel;
+    ledc_timer_config_t ledc_timer = {
+        .duty_resolution = LEDC_TIMER_8_BIT,
+        .freq_hz =  246,
+        .speed_mode = LEDC_HIGH_SPEED_MODE,
+        .timer_num =  LEDC_TIMER_0,
+        .clk_cfg = LEDC_AUTO_CLK,
+    };
+    ledc_timer_config(&ledc_timer);
+    init_timer_chanel(&ledc_channel, LEDC_HS_CH0_GPIO);
+    init_timer_chanel(&ledc_channel, LEDC_HS_CH1_GPIO);
+    init_timer_chanel(&ledc_channel, LEDC_HS_CH2_GPIO);
     ledc_fade_func_install(0);
 
     while(1) {
-        pwm_leds(&ledc_channel[0], app->acclr[0]);
+        pwm_leds(&ledc_channel, app->acclr[0]);
         vTaskDelay(LEDS_DELAY / portTICK_PERIOD_MS);
     }
 }
@@ -64,10 +58,9 @@ int8_t leds_off(t_app *app, char **argv) {
             vTaskDelete(app->leds_task);
             app->leds_task = NULL;
         }
+        ledc_stop(LEDC_HIGH_SPEED_MODE, LEDC_HS_CH0_CHANNEL, 0);
+        ledc_timer_rst(LEDC_HIGH_SPEED_MODE, LEDC_TIMER_0);
         ledc_fade_func_uninstall();
-        ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_26, GPIO_MODE_INPUT));
-        ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_27, GPIO_MODE_INPUT));
-        ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_33, GPIO_MODE_INPUT));
         return 0;
     }
     else {
