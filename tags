@@ -3258,6 +3258,8 @@
 808	build/compile_commands.json	/^{$/;"	o
 809	build/compile_commands.json	/^{$/;"	o
 81	build/compile_commands.json	/^{$/;"	o
+81	build/project_description.json	/^    "build_component_paths" : [ "\/home\/bril\/esp\/uvox\/components\/accelerometer", "\/home\/b/;"	s	array:build_component_paths
+81	build/project_description.json	/^    "build_components" : [ "accelerometer", "app_trace", "app_update", "asio", "bootloader", "bo/;"	s	array:build_components
 810	build/compile_commands.json	/^{$/;"	o
 811	build/compile_commands.json	/^{$/;"	o
 812	build/compile_commands.json	/^{$/;"	o
@@ -3269,6 +3271,8 @@
 818	build/compile_commands.json	/^{$/;"	o
 819	build/compile_commands.json	/^{$/;"	o
 82	build/compile_commands.json	/^{$/;"	o
+82	build/project_description.json	/^    "build_component_paths" : [ "\/home\/bril\/esp\/uvox\/components\/accelerometer", "\/home\/b/;"	s	array:build_component_paths
+82	build/project_description.json	/^    "build_components" : [ "accelerometer", "app_trace", "app_update", "asio", "bootloader", "bo/;"	s	array:build_components
 820	build/compile_commands.json	/^{$/;"	o
 821	build/compile_commands.json	/^{$/;"	o
 822	build/compile_commands.json	/^{$/;"	o
@@ -3280,6 +3284,8 @@
 828	build/compile_commands.json	/^{$/;"	o
 829	build/compile_commands.json	/^{$/;"	o
 83	build/compile_commands.json	/^{$/;"	o
+83	build/project_description.json	/^    "build_component_paths" : [ "\/home\/bril\/esp\/uvox\/components\/accelerometer", "\/home\/b/;"	s	array:build_component_paths
+83	build/project_description.json	/^    "build_components" : [ "accelerometer", "app_trace", "app_update", "asio", "bootloader", "bo/;"	s	array:build_components
 830	build/compile_commands.json	/^{$/;"	o
 831	build/compile_commands.json	/^{$/;"	o
 832	build/compile_commands.json	/^{$/;"	o
@@ -3291,6 +3297,8 @@
 838	build/compile_commands.json	/^{$/;"	o
 839	build/compile_commands.json	/^{$/;"	o
 84	build/compile_commands.json	/^{$/;"	o
+84	build/project_description.json	/^    "build_component_paths" : [ "\/home\/bril\/esp\/uvox\/components\/accelerometer", "\/home\/b/;"	s	array:build_component_paths
+84	build/project_description.json	/^    "build_components" : [ "accelerometer", "app_trace", "app_update", "asio", "bootloader", "bo/;"	s	array:build_components
 840	build/compile_commands.json	/^{$/;"	o
 841	build/compile_commands.json	/^{$/;"	o
 842	build/compile_commands.json	/^{$/;"	o
@@ -3302,6 +3310,8 @@
 848	build/compile_commands.json	/^{$/;"	o
 849	build/compile_commands.json	/^{$/;"	o
 85	build/compile_commands.json	/^{$/;"	o
+85	build/project_description.json	/^    "build_component_paths" : [ "\/home\/bril\/esp\/uvox\/components\/accelerometer", "\/home\/b/;"	s	array:build_component_paths
+85	build/project_description.json	/^    "build_components" : [ "accelerometer", "app_trace", "app_update", "asio", "bootloader", "bo/;"	s	array:build_components
 850	build/compile_commands.json	/^{$/;"	o
 851	build/compile_commands.json	/^{$/;"	o
 852	build/compile_commands.json	/^{$/;"	o
@@ -3351,6 +3361,11 @@
 892	build/compile_commands.json	/^{$/;"	o
 893	build/compile_commands.json	/^{$/;"	o
 894	build/compile_commands.json	/^{$/;"	o
+895	build/compile_commands.json	/^{$/;"	o
+896	build/compile_commands.json	/^{$/;"	o
+897	build/compile_commands.json	/^{$/;"	o
+898	build/compile_commands.json	/^{$/;"	o
+899	build/compile_commands.json	/^{$/;"	o
 9	build/CMakeFiles/bootloader.dir/Labels.json	/^		{$/;"	o	array:sources
 9	build/bootloader/compile_commands.json	/^{$/;"	o
 9	build/bootloader/config/kconfig_menus.json	/^                                    {$/;"	o	array:17.children.1.children.6.children.0.children
@@ -3396,6 +3411,8 @@
 9	build/project_description.json	/^    "build_component_paths" : [ "\/home\/bril\/esp\/uvox\/components\/accelerometer", "\/home\/b/;"	s	array:build_component_paths
 9	build/project_description.json	/^    "build_components" : [ "accelerometer", "app_trace", "app_update", "asio", "bootloader", "bo/;"	s	array:build_components
 90	build/compile_commands.json	/^{$/;"	o
+900	build/compile_commands.json	/^{$/;"	o
+901	build/compile_commands.json	/^{$/;"	o
 91	build/compile_commands.json	/^{$/;"	o
 92	build/compile_commands.json	/^{$/;"	o
 93	build/compile_commands.json	/^{$/;"	o
@@ -3412,8 +3429,8 @@ ADC_CAL_LUT_ENABLE	build/config/sdkconfig.json	/^    "ADC_CAL_LUT_ENABLE": true,
 ADC_DISABLE_DAC	build/config/sdkconfig.json	/^    "ADC_DISABLE_DAC": true,$/;"	b
 ADC_FORCE_XPD_FSM	build/config/sdkconfig.json	/^    "ADC_FORCE_XPD_FSM": false,$/;"	b
 ADXL_HOST	components/accelerometer/accelerometer.h	/^#define ADXL_HOST /;"	d
-AIS_LINE_1	components/accelerometer/accelerometer.c	/^#define AIS_LINE_1 /;"	d	file:
-AIS_LINE_2	components/accelerometer/accelerometer.c	/^#define AIS_LINE_2 /;"	d	file:
+AIS_LINE_1	components/include/components.h	/^#define AIS_LINE_1 /;"	d
+AIS_LINE_2	components/include/components.h	/^#define AIS_LINE_2 /;"	d
 APPTRACE_DEST_NONE	build/config/sdkconfig.json	/^    "APPTRACE_DEST_NONE": true,$/;"	b
 APPTRACE_DEST_TRAX	build/config/sdkconfig.json	/^    "APPTRACE_DEST_TRAX": false,$/;"	b
 APPTRACE_LOCK_ENABLE	build/config/sdkconfig.json	/^    "APPTRACE_LOCK_ENABLE": true,$/;"	b
@@ -3446,8 +3463,10 @@ ARCHITECTURE_ID	build/bootloader/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompile
 ARCHITECTURE_ID	build/bootloader/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID$/;"	d	file:
 ASIO_SSL_SUPPORT	build/config/sdkconfig.json	/^    "ASIO_SSL_SUPPORT": false,$/;"	b
 A_1OCTAL_NOTE	components/accelerometer/pwm_notes.c	/^#define A_1OCTAL_NOTE /;"	d	file:
-A_LINE_1	components/accelerometer/accelerometer.c	/^#define A_LINE_1 /;"	d	file:
-A_LINE_2	components/accelerometer/accelerometer.c	/^#define A_LINE_2 /;"	d	file:
+A_LINE_1	components/include/components.h	/^#define A_LINE_1 /;"	d
+A_LINE_2	components/include/components.h	/^#define A_LINE_2 /;"	d
+AsciiStr_to_font6x8	components/oled/oled.c	/^void AsciiStr_to_font6x8(char *str, t_display *display, int font_str_intdex) {$/;"	f	typeref:typename:void
+AsciiStr_to_font8x16	components/oled/oled.c	/^void AsciiStr_to_font8x16(char *str, t_display *display, int shift, int font_str_intdex) {$/;"	f	typeref:typename:void
 BOOTLOADER_APP_ROLLBACK_ENABLE	build/bootloader/config/sdkconfig.json	/^    "BOOTLOADER_APP_ROLLBACK_ENABLE": false,$/;"	b
 BOOTLOADER_APP_ROLLBACK_ENABLE	build/config/sdkconfig.json	/^    "BOOTLOADER_APP_ROLLBACK_ENABLE": false,$/;"	b
 BOOTLOADER_APP_TEST	build/bootloader/config/sdkconfig.json	/^    "BOOTLOADER_APP_TEST": false,$/;"	b
@@ -3505,14 +3524,16 @@ BTDM_CTRL_PINNED_TO_CORE	build/config/sdkconfig.json	/^    "BTDM_CTRL_PINNED_TO_
 BT_ENABLED	build/config/sdkconfig.json	/^    "BT_ENABLED": false,$/;"	b
 BT_RESERVE_DRAM	build/config/sdkconfig.json	/^    "BT_RESERVE_DRAM": 0,$/;"	n
 BUF_LEN	components/buttons/buttons.c	/^#define BUF_LEN /;"	d	file:
+BUF_SIZE	components/include/components.h	/^#define BUF_SIZE /;"	d
+BUF_SIZE	components/uart_console/uart_console.h	/^#define BUF_SIZE /;"	d
 BUTTONS_H	components/buttons/buttons.h	/^#define BUTTONS_H$/;"	d
 B_1OCTAL_NOTE	components/accelerometer/pwm_notes.c	/^#define B_1OCTAL_NOTE /;"	d	file:
-B_LINE_1	components/accelerometer/accelerometer.c	/^#define B_LINE_1 /;"	d	file:
-B_LINE_3	components/accelerometer/accelerometer.c	/^#define B_LINE_3 /;"	d	file:
+B_LINE_1	components/include/components.h	/^#define B_LINE_1 /;"	d
+B_LINE_3	components/include/components.h	/^#define B_LINE_3 /;"	d
 B_NOTE	components/accelerometer/pwm_notes.c	/^#define B_NOTE /;"	d	file:
-B_SMALL	components/accelerometer/accelerometer.c	/^#define B_SMALL /;"	d	file:
-CIS_LINE_1	components/accelerometer/accelerometer.c	/^#define CIS_LINE_1 /;"	d	file:
-CIS_LINE_2	components/accelerometer/accelerometer.c	/^#define CIS_LINE_2 /;"	d	file:
+B_SMALL	components/include/components.h	/^#define B_SMALL /;"	d
+CIS_LINE_1	components/include/components.h	/^#define CIS_LINE_1 /;"	d
+CIS_LINE_2	components/include/components.h	/^#define CIS_LINE_2 /;"	d
 CMAKE_AR	build/CMakeFiles/3.16.3/CMakeASMCompiler.cmake	/^set(CMAKE_AR "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	v
 CMAKE_AR	build/CMakeFiles/3.16.3/CMakeCCompiler.cmake	/^set(CMAKE_AR "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	v
 CMAKE_AR	build/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake	/^set(CMAKE_AR "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	v
@@ -3636,9 +3657,11 @@ CMAKE_CROSSCOMPILING	build/esp-idf/freertos/cmake_install.cmake	/^  set(CMAKE_CR
 CMAKE_CROSSCOMPILING	build/esp-idf/hal/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/heap/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/idf_test/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
+CMAKE_CROSSCOMPILING	build/esp-idf/include/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/jsmn/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/json/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/libsodium/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
+CMAKE_CROSSCOMPILING	build/esp-idf/list/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/log/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/lwip/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/main/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
@@ -3652,6 +3675,7 @@ CMAKE_CROSSCOMPILING	build/esp-idf/newlib/cmake_install.cmake	/^  set(CMAKE_CROS
 CMAKE_CROSSCOMPILING	build/esp-idf/newlib/port/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/nghttp/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/nvs_flash/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
+CMAKE_CROSSCOMPILING	build/esp-idf/oled/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/openssl/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/partition_table/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/perfmon/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
@@ -3666,10 +3690,12 @@ CMAKE_CROSSCOMPILING	build/esp-idf/spiffs/cmake_install.cmake	/^  set(CMAKE_CROS
 CMAKE_CROSSCOMPILING	build/esp-idf/tcp_transport/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/tcpip_adapter/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/tinyusb/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
+CMAKE_CROSSCOMPILING	build/esp-idf/uart_console/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/ulp/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/unity/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/vfs/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/wear_levelling/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
+CMAKE_CROSSCOMPILING	build/esp-idf/wifi/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/wifi_provisioning/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/wpa_supplicant/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
 CMAKE_CROSSCOMPILING	build/esp-idf/xtensa/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
@@ -3959,12 +3985,16 @@ CMAKE_INSTALL_COMPONENT	build/esp-idf/heap/cmake_install.cmake	/^    set(CMAKE_I
 CMAKE_INSTALL_COMPONENT	build/esp-idf/heap/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/idf_test/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/idf_test/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_COMPONENT	build/esp-idf/include/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/esp-idf/include/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/jsmn/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/jsmn/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/json/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/json/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/libsodium/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/libsodium/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_COMPONENT	build/esp-idf/list/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/esp-idf/list/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/log/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/log/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/lwip/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
@@ -3991,6 +4021,8 @@ CMAKE_INSTALL_COMPONENT	build/esp-idf/nghttp/cmake_install.cmake	/^    set(CMAKE
 CMAKE_INSTALL_COMPONENT	build/esp-idf/nghttp/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/nvs_flash/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/nvs_flash/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_COMPONENT	build/esp-idf/oled/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/esp-idf/oled/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/openssl/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/openssl/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/partition_table/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
@@ -4019,6 +4051,8 @@ CMAKE_INSTALL_COMPONENT	build/esp-idf/tcpip_adapter/cmake_install.cmake	/^    se
 CMAKE_INSTALL_COMPONENT	build/esp-idf/tcpip_adapter/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/tinyusb/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/tinyusb/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_COMPONENT	build/esp-idf/uart_console/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/esp-idf/uart_console/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/ulp/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/ulp/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/unity/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
@@ -4027,6 +4061,8 @@ CMAKE_INSTALL_COMPONENT	build/esp-idf/vfs/cmake_install.cmake	/^    set(CMAKE_IN
 CMAKE_INSTALL_COMPONENT	build/esp-idf/vfs/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/wear_levelling/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/wear_levelling/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_COMPONENT	build/esp-idf/wifi/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/esp-idf/wifi/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/wifi_provisioning/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/wifi_provisioning/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
 CMAKE_INSTALL_COMPONENT	build/esp-idf/wpa_supplicant/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
@@ -4106,9 +4142,11 @@ CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/freertos/cmake_install.cmake	/^    set(C
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/hal/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/heap/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/idf_test/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/include/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/jsmn/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/json/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/libsodium/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/list/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/log/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/lwip/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/main/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
@@ -4122,6 +4160,7 @@ CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/newlib/cmake_install.cmake	/^    set(CMA
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/newlib/port/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/nghttp/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/nvs_flash/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/oled/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/openssl/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/partition_table/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/perfmon/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
@@ -4136,10 +4175,12 @@ CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/spiffs/cmake_install.cmake	/^    set(CMA
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/tcp_transport/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/tcpip_adapter/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/tinyusb/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/uart_console/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/ulp/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/unity/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/vfs/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/wear_levelling/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/wifi/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/wifi_provisioning/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/wpa_supplicant/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_CONFIG_NAME	build/esp-idf/xtensa/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
@@ -4220,9 +4261,11 @@ CMAKE_INSTALL_PREFIX	build/esp-idf/freertos/cmake_install.cmake	/^  set(CMAKE_IN
 CMAKE_INSTALL_PREFIX	build/esp-idf/hal/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/heap/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/idf_test/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_PREFIX	build/esp-idf/include/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/jsmn/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/json/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/libsodium/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_PREFIX	build/esp-idf/list/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/log/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/lwip/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/main/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
@@ -4236,6 +4279,7 @@ CMAKE_INSTALL_PREFIX	build/esp-idf/newlib/cmake_install.cmake	/^  set(CMAKE_INST
 CMAKE_INSTALL_PREFIX	build/esp-idf/newlib/port/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/nghttp/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/nvs_flash/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_PREFIX	build/esp-idf/oled/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/openssl/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/partition_table/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/perfmon/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
@@ -4250,10 +4294,12 @@ CMAKE_INSTALL_PREFIX	build/esp-idf/spiffs/cmake_install.cmake	/^  set(CMAKE_INST
 CMAKE_INSTALL_PREFIX	build/esp-idf/tcp_transport/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/tcpip_adapter/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/tinyusb/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_PREFIX	build/esp-idf/uart_console/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/ulp/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/unity/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/vfs/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/wear_levelling/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_PREFIX	build/esp-idf/wifi/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/wifi_provisioning/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/wpa_supplicant/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_PREFIX	build/esp-idf/xtensa/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
@@ -4297,6 +4343,7 @@ CMAKE_SYSTEM_PROCESSOR	build/CMakeFiles/3.16.3/CMakeSystem.cmake	/^set(CMAKE_SYS
 CMAKE_SYSTEM_PROCESSOR	build/bootloader/CMakeFiles/3.16.3/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_PROCESSOR "")$/;"	v
 CMAKE_SYSTEM_VERSION	build/CMakeFiles/3.16.3/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_VERSION "")$/;"	v
 CMAKE_SYSTEM_VERSION	build/bootloader/CMakeFiles/3.16.3/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_VERSION "")$/;"	v
+CMD_SIZE	components/uart_console/uart_console.h	/^#define CMD_SIZE /;"	d
 COAP_LOG_DEFAULT_LEVEL	build/config/sdkconfig.json	/^    "COAP_LOG_DEFAULT_LEVEL": 0,$/;"	n
 COAP_MBEDTLS_DEBUG	build/config/sdkconfig.json	/^    "COAP_MBEDTLS_DEBUG": false,$/;"	b
 COAP_MBEDTLS_PKI	build/config/sdkconfig.json	/^    "COAP_MBEDTLS_PKI": false,$/;"	b
@@ -4393,6 +4440,7 @@ COMPILER_VERSION_TWEAK	build/bootloader/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXX
 COMPILER_VERSION_TWEAK	build/bootloader/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
 COMPILER_WARN_WRITE_STRINGS	build/bootloader/config/sdkconfig.json	/^    "COMPILER_WARN_WRITE_STRINGS": false,$/;"	b
 COMPILER_WARN_WRITE_STRINGS	build/config/sdkconfig.json	/^    "COMPILER_WARN_WRITE_STRINGS": false,$/;"	b
+COMPONENTS_H	components/include/components.h	/^#define COMPONENTS_H$/;"	d
 COMPONENT_KCONFIGS	build/bootloader/project_description.json	/^        "COMPONENT_KCONFIGS" : "\/home\/bril\/esp\/esp-idf\/components\/efuse\/Kconfig;\/home\/b/;"	s	object:config_environment
 COMPONENT_KCONFIGS	build/project_description.json	/^        "COMPONENT_KCONFIGS" : "\/home\/bril\/esp\/esp-idf\/components\/app_trace\/Kconfig;\/hom/;"	s	object:config_environment
 COMPONENT_KCONFIGS_PROJBUILD	build/bootloader/project_description.json	/^        "COMPONENT_KCONFIGS_PROJBUILD" : "\/home\/bril\/esp\/esp-idf\/components\/bootloader\/Kc/;"	s	object:config_environment
@@ -6082,20 +6130,22 @@ C_DIALECT	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^# define C_DI
 C_DIALECT	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^#  define C_DIALECT /;"	d	file:
 C_DIALECT	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^#  define C_DIALECT$/;"	d	file:
 C_DIALECT	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^# define C_DIALECT /;"	d	file:
-C_LINE_1	components/accelerometer/accelerometer.c	/^#define C_LINE_1 /;"	d	file:
-C_LINE_2	components/accelerometer/accelerometer.c	/^#define C_LINE_2 /;"	d	file:
+C_LINE_1	components/include/components.h	/^#define C_LINE_1 /;"	d
+C_LINE_2	components/include/components.h	/^#define C_LINE_2 /;"	d
 Cis_1OCTAL_NOTE	components/accelerometer/pwm_notes.c	/^#define Cis_1OCTAL_NOTE /;"	d	file:
 DEC	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^#define DEC(/;"	d	file:
 DEC	build/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define DEC(/;"	d	file:
 DEC	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^#define DEC(/;"	d	file:
 DEC	build/bootloader/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define DEC(/;"	d	file:
-DEFAULT_DUTY	components/accelerometer/pwm_notes.c	/^#define DEFAULT_DUTY /;"	d	file:
-DIS_LINE_1	components/accelerometer/accelerometer.c	/^#define DIS_LINE_1 /;"	d	file:
-DIS_LINE_2	components/accelerometer/accelerometer.c	/^#define DIS_LINE_2 /;"	d	file:
+DEFAULT_DUTY	components/include/components.h	/^#define DEFAULT_DUTY /;"	d
+DELETE	components/include/components.h	/^#define DELETE /;"	d
+DEL_SEQ	components/uart_console/uart_console.h	/^#define DEL_SEQ /;"	d
+DIS_LINE_1	components/include/components.h	/^#define DIS_LINE_1 /;"	d
+DIS_LINE_2	components/include/components.h	/^#define DIS_LINE_2 /;"	d
 DMA_CHAN	components/accelerometer/accelerometer.h	/^#define DMA_CHAN /;"	d
 D_1OCTAL_NOTE	components/accelerometer/pwm_notes.c	/^#define D_1OCTAL_NOTE /;"	d	file:
-D_LINE_1	components/accelerometer/accelerometer.c	/^#define D_LINE_1 /;"	d	file:
-D_LINE_2	components/accelerometer/accelerometer.c	/^#define D_LINE_2 /;"	d	file:
+D_LINE_1	components/include/components.h	/^#define D_LINE_1 /;"	d
+D_LINE_2	components/include/components.h	/^#define D_LINE_2 /;"	d
 EFUSE_CODE_SCHEME_COMPAT_3_4	build/bootloader/config/sdkconfig.json	/^    "EFUSE_CODE_SCHEME_COMPAT_3_4": true,$/;"	b
 EFUSE_CODE_SCHEME_COMPAT_3_4	build/config/sdkconfig.json	/^    "EFUSE_CODE_SCHEME_COMPAT_3_4": true,$/;"	b
 EFUSE_CODE_SCHEME_COMPAT_NONE	build/bootloader/config/sdkconfig.json	/^    "EFUSE_CODE_SCHEME_COMPAT_NONE": false,$/;"	b
@@ -6108,8 +6158,13 @@ EFUSE_MAX_BLK_LEN	build/bootloader/config/sdkconfig.json	/^    "EFUSE_MAX_BLK_LE
 EFUSE_MAX_BLK_LEN	build/config/sdkconfig.json	/^    "EFUSE_MAX_BLK_LEN": 192,$/;"	n
 EFUSE_VIRTUAL	build/bootloader/config/sdkconfig.json	/^    "EFUSE_VIRTUAL": false,$/;"	b
 EFUSE_VIRTUAL	build/config/sdkconfig.json	/^    "EFUSE_VIRTUAL": false,$/;"	b
-EIS_LINE_1	components/accelerometer/accelerometer.c	/^#define EIS_LINE_1 /;"	d	file:
-EIS_LINE_2	components/accelerometer/accelerometer.c	/^#define EIS_LINE_2 /;"	d	file:
+EIS_LINE_1	components/include/components.h	/^#define EIS_LINE_1 /;"	d
+EIS_LINE_2	components/include/components.h	/^#define EIS_LINE_2 /;"	d
+ENTER	components/include/components.h	/^#define ENTER /;"	d
+ERR_ADD_PARAM	components/include/components.h	/^#define ERR_ADD_PARAM /;"	d
+ERR_BAD_ARG	components/include/components.h	/^#define ERR_BAD_ARG /;"	d
+ERR_COMM_NOT_FOUND	components/include/components.h	/^#define ERR_COMM_NOT_FOUND /;"	d
+ERR_TO_MANY_ARG	components/include/components.h	/^#define ERR_TO_MANY_ARG /;"	d
 ESP32_BROWNOUT_DET	build/bootloader/config/sdkconfig.json	/^    "ESP32_BROWNOUT_DET": true,$/;"	b
 ESP32_BROWNOUT_DET	build/config/sdkconfig.json	/^    "ESP32_BROWNOUT_DET": true,$/;"	b
 ESP32_BROWNOUT_DET_LVL	build/bootloader/config/sdkconfig.json	/^    "ESP32_BROWNOUT_DET_LVL": 0,$/;"	n
@@ -6398,8 +6453,9 @@ ETH_SPI_ETHERNET_W5500	build/config/sdkconfig.json	/^    "ETH_SPI_ETHERNET_W5500
 ETH_USE_ESP32_EMAC	build/config/sdkconfig.json	/^    "ETH_USE_ESP32_EMAC": true,$/;"	b
 ETH_USE_OPENETH	build/config/sdkconfig.json	/^    "ETH_USE_OPENETH": false,$/;"	b
 ETH_USE_SPI_ETHERNET	build/config/sdkconfig.json	/^    "ETH_USE_SPI_ETHERNET": true,$/;"	b
-E_LINE_1	components/accelerometer/accelerometer.c	/^#define E_LINE_1 /;"	d	file:
-E_LINE_2	components/accelerometer/accelerometer.c	/^#define E_LINE_2 /;"	d	file:
+E_LINE_1	components/include/components.h	/^#define E_LINE_1 /;"	d
+E_LINE_2	components/include/components.h	/^#define E_LINE_2 /;"	d
+FADE_TIME	components/accelerometer/leds.c	/^#define FADE_TIME /;"	d	file:
 FATFS_CODEPAGE	build/config/sdkconfig.json	/^    "FATFS_CODEPAGE": 437,$/;"	n
 FATFS_CODEPAGE_437	build/config/sdkconfig.json	/^    "FATFS_CODEPAGE_437": true,$/;"	b
 FATFS_CODEPAGE_720	build/config/sdkconfig.json	/^    "FATFS_CODEPAGE_720": false,$/;"	b
@@ -6430,8 +6486,8 @@ FATFS_LFN_STACK	build/config/sdkconfig.json	/^    "FATFS_LFN_STACK": false,$/;"	
 FATFS_PER_FILE_CACHE	build/config/sdkconfig.json	/^    "FATFS_PER_FILE_CACHE": true,$/;"	b
 FATFS_TIMEOUT_MS	build/config/sdkconfig.json	/^    "FATFS_TIMEOUT_MS": 10000,$/;"	n
 FATFS_USE_FASTSEEK	build/config/sdkconfig.json	/^    "FATFS_USE_FASTSEEK": false,$/;"	b
-FIS_LINE_1	components/accelerometer/accelerometer.c	/^#define FIS_LINE_1 /;"	d	file:
-FIS_LINE_2	components/accelerometer/accelerometer.c	/^#define FIS_LINE_2 /;"	d	file:
+FIS_LINE_1	components/include/components.h	/^#define FIS_LINE_1 /;"	d
+FIS_LINE_2	components/include/components.h	/^#define FIS_LINE_2 /;"	d
 FMB_COMM_MODE_ASCII_EN	build/config/sdkconfig.json	/^    "FMB_COMM_MODE_ASCII_EN": true,$/;"	b
 FMB_COMM_MODE_RTU_EN	build/config/sdkconfig.json	/^    "FMB_COMM_MODE_RTU_EN": true,$/;"	b
 FMB_COMM_MODE_TCP_EN	build/config/sdkconfig.json	/^    "FMB_COMM_MODE_TCP_EN": true,$/;"	b
@@ -6489,8 +6545,8 @@ FREERTOS_UNICORE	build/config/sdkconfig.json	/^    "FREERTOS_UNICORE": false,$/;
 FREERTOS_USE_TRACE_FACILITY	build/config/sdkconfig.json	/^    "FREERTOS_USE_TRACE_FACILITY": false,$/;"	b
 FREERTOS_WATCHPOINT_END_OF_STACK	build/config/sdkconfig.json	/^    "FREERTOS_WATCHPOINT_END_OF_STACK": false,$/;"	b
 Fis_1OCTAL_NOTE	components/accelerometer/pwm_notes.c	/^#define Fis_1OCTAL_NOTE /;"	d	file:
-GIS_LINE_1	components/accelerometer/accelerometer.c	/^#define GIS_LINE_1 /;"	d	file:
-GIS_LINE_2	components/accelerometer/accelerometer.c	/^#define GIS_LINE_2 /;"	d	file:
+GIS_LINE_1	components/include/components.h	/^#define GIS_LINE_1 /;"	d
+GIS_LINE_2	components/include/components.h	/^#define GIS_LINE_2 /;"	d
 GIT_DIR	build/CMakeFiles/git-data/grabRef.cmake	/^		set(GIT_DIR "${GIT_DIR_NEW}")$/;"	v
 GIT_DIR	build/CMakeFiles/git-data/grabRef.cmake	/^set(GIT_DIR "\/home\/bril\/esp\/uvox\/.git")$/;"	v
 GIT_DIR	build/bootloader/CMakeFiles/git-data/grabRef.cmake	/^		set(GIT_DIR "${GIT_DIR_NEW}")$/;"	v
@@ -6501,8 +6557,10 @@ GPIO_INPUT_IO_0	components/buttons/buttons.h	/^#define GPIO_INPUT_IO_0 /;"	d
 GPIO_INPUT_IO_1	components/buttons/buttons.c	/^#define GPIO_INPUT_IO_1 /;"	d	file:
 GPIO_INPUT_IO_1	components/buttons/buttons.h	/^#define GPIO_INPUT_IO_1 /;"	d
 GPIO_INPUT_PIN_SEL	components/buttons/buttons.c	/^#define GPIO_INPUT_PIN_SEL /;"	d	file:
-G_LINE_1	components/accelerometer/accelerometer.c	/^#define G_LINE_1 /;"	d	file:
-G_LINE_2	components/accelerometer/accelerometer.c	/^#define G_LINE_2 /;"	d	file:
+GPIO_LED_1	components/accelerometer/leds.c	/^#define GPIO_LED_1 /;"	d	file:
+GPIO_OUTPUT_PIN_SEL	components/accelerometer/leds.c	/^#define GPIO_OUTPUT_PIN_SEL /;"	d	file:
+G_LINE_1	components/include/components.h	/^#define G_LINE_1 /;"	d
+G_LINE_2	components/include/components.h	/^#define G_LINE_2 /;"	d
 HEAD_HASH	build/CMakeFiles/git-data/grabRef.cmake	/^		set(HEAD_HASH "${HEAD_REF}")$/;"	v
 HEAD_HASH	build/CMakeFiles/git-data/grabRef.cmake	/^set(HEAD_HASH)$/;"	v
 HEAD_HASH	build/bootloader/CMakeFiles/git-data/grabRef.cmake	/^		set(HEAD_HASH "${HEAD_REF}")$/;"	v
@@ -6524,6 +6582,8 @@ HTTPD_MAX_REQ_HDR_LEN	build/config/sdkconfig.json	/^    "HTTPD_MAX_REQ_HDR_LEN":
 HTTPD_MAX_URI_LEN	build/config/sdkconfig.json	/^    "HTTPD_MAX_URI_LEN": 512,$/;"	n
 HTTPD_PURGE_BUF_LEN	build/config/sdkconfig.json	/^    "HTTPD_PURGE_BUF_LEN": 32,$/;"	n
 HTTPD_WS_SUPPORT	build/config/sdkconfig.json	/^    "HTTPD_WS_SUPPORT": false,$/;"	b
+I2C_ADDR	components/oled/oled.h	/^#define I2C_ADDR /;"	d
+I2C_PORT	components/oled/oled.h	/^#define I2C_PORT /;"	d
 IDF_CMAKE	build/bootloader/config/sdkconfig.json	/^    "IDF_CMAKE": true,$/;"	b
 IDF_CMAKE	build/config/sdkconfig.json	/^    "IDF_CMAKE": true,$/;"	b
 IDF_FIRMWARE_CHIP_ID	build/bootloader/config/sdkconfig.json	/^    "IDF_FIRMWARE_CHIP_ID": 0,$/;"	n
@@ -6538,11 +6598,20 @@ ID_VOID_MAIN	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^# define I
 ID_VOID_MAIN	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^# define ID_VOID_MAIN$/;"	d	file:
 JSMN_PARENT_LINKS	build/config/sdkconfig.json	/^    "JSMN_PARENT_LINKS": false,$/;"	b
 JSMN_STRICT	build/config/sdkconfig.json	/^    "JSMN_STRICT": false,$/;"	b
+LED1	components/accelerometer/leds.c	/^#define LED1 /;"	d	file:
+LED2	components/accelerometer/leds.c	/^#define LED2 /;"	d	file:
 LEDC_CHANNEL_1	components/accelerometer/pwm_notes.c	/^#define LEDC_CHANNEL_1 /;"	d	file:
+LEDC_HS_CH0_CHANNEL	components/accelerometer/leds.c	/^#define LEDC_HS_CH0_CHANNEL /;"	d	file:
+LEDC_HS_CH0_GPIO	components/accelerometer/leds.c	/^#define LEDC_HS_CH0_GPIO /;"	d	file:
+LEDC_HS_CH1_GPIO	components/accelerometer/leds.c	/^#define LEDC_HS_CH1_GPIO /;"	d	file:
+LEDC_HS_CH2_GPIO	components/accelerometer/leds.c	/^#define LEDC_HS_CH2_GPIO /;"	d	file:
 LEDC_LS_CH1_CHANNEL	components/accelerometer/pwm_notes.c	/^#define LEDC_LS_CH1_CHANNEL /;"	d	file:
 LEDC_LS_CH1_GPIO	components/accelerometer/pwm_notes.c	/^#define LEDC_LS_CH1_GPIO /;"	d	file:
 LEDC_LS_MODE	components/accelerometer/pwm_notes.c	/^#define LEDC_LS_MODE /;"	d	file:
 LEDC_LS_TIMER	components/accelerometer/pwm_notes.c	/^#define LEDC_LS_TIMER /;"	d	file:
+LEDC_TEST_CH_NUM	components/accelerometer/leds.c	/^#define LEDC_TEST_CH_NUM /;"	d	file:
+LEFT_ARR	components/uart_console/uart_console.h	/^#define LEFT_ARR /;"	d
+LEFT_SEQ	components/uart_console/uart_console.h	/^#define LEFT_SEQ /;"	d
 LEGACY_INCLUDE_COMMON_HEADERS	build/bootloader/config/sdkconfig.json	/^    "LEGACY_INCLUDE_COMMON_HEADERS": false,$/;"	b
 LEGACY_INCLUDE_COMMON_HEADERS	build/config/sdkconfig.json	/^    "LEGACY_INCLUDE_COMMON_HEADERS": false,$/;"	b
 LOG_COLORS	build/bootloader/config/sdkconfig.json	/^    "LOG_COLORS": true,$/;"	b
@@ -6649,6 +6718,9 @@ LWIP_TIMERS_ONDEMAND	build/config/sdkconfig.json	/^    "LWIP_TIMERS_ONDEMAND": t
 LWIP_UDP_RECVMBOX_SIZE	build/config/sdkconfig.json	/^    "LWIP_UDP_RECVMBOX_SIZE": 6,$/;"	n
 LWIP_USE_ONLY_LWIP_SELECT	build/config/sdkconfig.json	/^    "LWIP_USE_ONLY_LWIP_SELECT": false,$/;"	b
 MAIN_H	main/main.h	/^#define MAIN_H$/;"	d
+MAX_DUTY	components/accelerometer/leds.c	/^#define MAX_DUTY /;"	d	file:
+MAX_RECONNECT_TRY	components/wifi/wifi.h	/^#define MAX_RECONNECT_TRY /;"	d
+MAX_SIZE_BUF	components/include/components.h	/^#define MAX_SIZE_BUF /;"	d
 MBEDTLS_AES_C	build/config/sdkconfig.json	/^    "MBEDTLS_AES_C": true,$/;"	b
 MBEDTLS_ASYMMETRIC_CONTENT_LEN	build/config/sdkconfig.json	/^    "MBEDTLS_ASYMMETRIC_CONTENT_LEN": true,$/;"	b
 MBEDTLS_ATCA_HW_ECDSA_SIGN	build/config/sdkconfig.json	/^    "MBEDTLS_ATCA_HW_ECDSA_SIGN": false,$/;"	b
@@ -6748,6 +6820,7 @@ MINGW	build/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake	/^  set(MINGW 1)$/;"	v
 MINGW	build/bootloader/CMakeFiles/3.16.3/CMakeCCompiler.cmake	/^  set(MINGW 1)$/;"	v
 MINGW	build/bootloader/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake	/^  set(MINGW 1)$/;"	v
 MIN_DUTY	components/accelerometer/pwm_notes.c	/^#define MIN_DUTY /;"	d	file:
+MIN_FADE	components/accelerometer/leds.c	/^#define MIN_FADE /;"	d	file:
 MQTT_CUSTOM_OUTBOX	build/config/sdkconfig.json	/^    "MQTT_CUSTOM_OUTBOX": false,$/;"	b
 MQTT_PROTOCOL_311	build/config/sdkconfig.json	/^    "MQTT_PROTOCOL_311": true,$/;"	b
 MQTT_TASK_CORE_SELECTION_ENABLED	build/config/sdkconfig.json	/^    "MQTT_TASK_CORE_SELECTION_ENABLED": false,$/;"	b
@@ -6762,11 +6835,14 @@ NEWLIB_STDIN_LINE_ENDING_LF	build/config/sdkconfig.json	/^    "NEWLIB_STDIN_LINE
 NEWLIB_STDOUT_LINE_ENDING_CR	build/config/sdkconfig.json	/^    "NEWLIB_STDOUT_LINE_ENDING_CR": false,$/;"	b
 NEWLIB_STDOUT_LINE_ENDING_CRLF	build/config/sdkconfig.json	/^    "NEWLIB_STDOUT_LINE_ENDING_CRLF": true,$/;"	b
 NEWLIB_STDOUT_LINE_ENDING_LF	build/config/sdkconfig.json	/^    "NEWLIB_STDOUT_LINE_ENDING_LF": false,$/;"	b
+NL_SEQ	components/uart_console/uart_console.h	/^#define NL_SEQ /;"	d
+OLED_H	components/oled/oled.h	/^#define OLED_H$/;"	d
 OPENSSL_ASSERT_DO_NOTHING	build/config/sdkconfig.json	/^    "OPENSSL_ASSERT_DO_NOTHING": false,$/;"	b
 OPENSSL_ASSERT_EXIT	build/config/sdkconfig.json	/^    "OPENSSL_ASSERT_EXIT": true,$/;"	b
 OPENSSL_DEBUG	build/config/sdkconfig.json	/^    "OPENSSL_DEBUG": false,$/;"	b
 OPENSSL_ERROR_STACK	build/config/sdkconfig.json	/^    "OPENSSL_ERROR_STACK": true,$/;"	b
 OTA_ALLOW_HTTP	build/config/sdkconfig.json	/^    "OTA_ALLOW_HTTP": false,$/;"	b
+PAGE_COUNT	components/oled/oled.h	/^#define PAGE_COUNT /;"	d
 PARTITION_TABLE_CUSTOM	build/bootloader/config/sdkconfig.json	/^    "PARTITION_TABLE_CUSTOM": false,$/;"	b
 PARTITION_TABLE_CUSTOM	build/config/sdkconfig.json	/^    "PARTITION_TABLE_CUSTOM": false,$/;"	b
 PARTITION_TABLE_CUSTOM_FILENAME	build/bootloader/config/sdkconfig.json	/^    "PARTITION_TABLE_CUSTOM_FILENAME": "partitions.csv",$/;"	s
@@ -6812,13 +6888,20 @@ PTHREAD_TASK_CORE_DEFAULT	build/config/sdkconfig.json	/^    "PTHREAD_TASK_CORE_D
 PTHREAD_TASK_NAME_DEFAULT	build/config/sdkconfig.json	/^    "PTHREAD_TASK_NAME_DEFAULT": "pthread",$/;"	s
 PTHREAD_TASK_PRIO_DEFAULT	build/config/sdkconfig.json	/^    "PTHREAD_TASK_PRIO_DEFAULT": 5,$/;"	n
 PTHREAD_TASK_STACK_SIZE_DEFAULT	build/config/sdkconfig.json	/^    "PTHREAD_TASK_STACK_SIZE_DEFAULT": 3072,$/;"	n
+PWM_method	components/accelerometer/leds.c	/^static void PWM_method(ledc_channel_config_t *ledc_channel, int16_t  duty) {$/;"	f	typeref:typename:void	file:
 REG_BW_RATE	components/accelerometer/accelerometer.h	/^#define REG_BW_RATE /;"	d
 REG_DATAX0	components/accelerometer/accelerometer.h	/^#define REG_DATAX0 /;"	d
 REG_DEVID	components/accelerometer/accelerometer.h	/^#define REG_DEVID /;"	d
 REG_MB_FLAG	components/accelerometer/accelerometer.h	/^#define REG_MB_FLAG /;"	d
 REG_POWER_CTL	components/accelerometer/accelerometer.h	/^#define REG_POWER_CTL /;"	d
 REG_READ_FLAG	components/accelerometer/accelerometer.h	/^#define REG_READ_FLAG /;"	d
+RIGHT_ARR	components/uart_console/uart_console.h	/^#define RIGHT_ARR /;"	d
+RIGHT_SEQ	components/uart_console/uart_console.h	/^#define RIGHT_SEQ /;"	d
 RTCIO_SUPPORT_RTC_GPIO_DESC	build/config/sdkconfig.json	/^    "RTCIO_SUPPORT_RTC_GPIO_DESC": false,$/;"	b
+SCL_PIN	components/oled/oled.h	/^#define SCL_PIN /;"	d
+SCREEN_SIZE	components/oled/oled.h	/^#define SCREEN_SIZE /;"	d
+SCREEN_WIDTH	components/oled/oled.h	/^#define SCREEN_WIDTH /;"	d
+SDA_PIN	components/oled/oled.h	/^#define SDA_PIN /;"	d
 SDK_TOOLCHAIN_SUPPORTS_TIME_WIDE_64_BITS	build/bootloader/config/sdkconfig.json	/^    "SDK_TOOLCHAIN_SUPPORTS_TIME_WIDE_64_BITS": false,$/;"	b
 SDK_TOOLCHAIN_SUPPORTS_TIME_WIDE_64_BITS	build/config/sdkconfig.json	/^    "SDK_TOOLCHAIN_SUPPORTS_TIME_WIDE_64_BITS": false,$/;"	b
 SDK_TOOLPREFIX	build/bootloader/config/sdkconfig.json	/^    "SDK_TOOLPREFIX": "xtensa-esp32-elf-",$/;"	s
@@ -6845,6 +6928,7 @@ SIMULATE_VERSION_PATCH	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^
 SIMULATE_VERSION_PATCH	build/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_PATCH /;"	d	file:
 SIMULATE_VERSION_PATCH	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_PATCH /;"	d	file:
 SIMULATE_VERSION_PATCH	build/bootloader/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_PATCH /;"	d	file:
+SIZE_STR_FOR_EXECUTE	components/include/components.h	/^#define SIZE_STR_FOR_EXECUTE /;"	d
 SPIFFS_API_DBG	build/config/sdkconfig.json	/^    "SPIFFS_API_DBG": false,$/;"	b
 SPIFFS_CACHE	build/config/sdkconfig.json	/^    "SPIFFS_CACHE": true,$/;"	b
 SPIFFS_CACHE_DBG	build/config/sdkconfig.json	/^    "SPIFFS_CACHE_DBG": false,$/;"	b
@@ -6915,8 +6999,15 @@ STRINGIFY_HELPER	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^#defin
 STRINGIFY_HELPER	build/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY_HELPER(/;"	d	file:
 STRINGIFY_HELPER	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY_HELPER(/;"	d	file:
 STRINGIFY_HELPER	build/bootloader/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY_HELPER(/;"	d	file:
+TAG	components/uart_console/uart_console.c	/^static const char *TAG = "uart_events";$/;"	v	typeref:typename:const char *	file:
+TAG	components/wifi/wifi.c	/^static const char *TAG = "wifi station";$/;"	v	typeref:typename:const char *	file:
 TWAI_ISR_IN_IRAM	build/config/sdkconfig.json	/^    "TWAI_ISR_IN_IRAM": false,$/;"	b
 UART_ISR_IN_IRAM	build/config/sdkconfig.json	/^    "UART_ISR_IN_IRAM": false,$/;"	b
+UART_NUM	components/uart_console/uart_console.h	/^#define UART_NUM /;"	d
+UART_RX	components/uart_console/uart_console.h	/^#define UART_RX /;"	d
+UART_RX_PIN	components/include/components.h	/^#define UART_RX_PIN /;"	d
+UART_TX	components/uart_console/uart_console.h	/^#define UART_TX /;"	d
+UART_TX_PIN	components/include/components.h	/^#define UART_TX_PIN /;"	d
 UNITY_ENABLE_BACKTRACE_ON_FAIL	build/config/sdkconfig.json	/^    "UNITY_ENABLE_BACKTRACE_ON_FAIL": false,$/;"	b
 UNITY_ENABLE_COLOR	build/config/sdkconfig.json	/^    "UNITY_ENABLE_COLOR": false,$/;"	b
 UNITY_ENABLE_DOUBLE	build/config/sdkconfig.json	/^    "UNITY_ENABLE_DOUBLE": true,$/;"	b
@@ -6935,8 +7026,12 @@ VFS_SUPPORT_IO	build/config/sdkconfig.json	/^    "VFS_SUPPORT_IO": true,$/;"	b
 VFS_SUPPORT_SELECT	build/config/sdkconfig.json	/^    "VFS_SUPPORT_SELECT": true,$/;"	b
 VFS_SUPPORT_TERMIOS	build/config/sdkconfig.json	/^    "VFS_SUPPORT_TERMIOS": true,$/;"	b
 VFS_SUPPRESS_SELECT_DEBUG_OUTPUT	build/config/sdkconfig.json	/^    "VFS_SUPPRESS_SELECT_DEBUG_OUTPUT": true,$/;"	b
+WIFI_CONNECTED_BIT	components/wifi/wifi.h	/^#define WIFI_CONNECTED_BIT /;"	d
+WIFI_CREDENTIAL_DELIM	components/wifi/wifi.h	/^#define WIFI_CREDENTIAL_DELIM /;"	d
+WIFI_FAIL_BIT	components/wifi/wifi.h	/^#define WIFI_FAIL_BIT /;"	d
 WIFI_PROV_AUTOSTOP_TIMEOUT	build/config/sdkconfig.json	/^    "WIFI_PROV_AUTOSTOP_TIMEOUT": 30,$/;"	n
 WIFI_PROV_SCAN_MAX_ENTRIES	build/config/sdkconfig.json	/^    "WIFI_PROV_SCAN_MAX_ENTRIES": 16,$/;"	n
+WIFI_STA_CONNECT_COMMAND	components/wifi/wifi.h	/^#define WIFI_STA_CONNECT_COMMAND /;"	d
 WL_SECTOR_SIZE	build/config/sdkconfig.json	/^    "WL_SECTOR_SIZE": 4096,$/;"	n
 WL_SECTOR_SIZE_4096	build/config/sdkconfig.json	/^    "WL_SECTOR_SIZE_4096": true,$/;"	b
 WL_SECTOR_SIZE_512	build/config/sdkconfig.json	/^    "WL_SECTOR_SIZE_512": false,$/;"	b
@@ -6946,6 +7041,9 @@ WPA_MBEDTLS_CRYPTO	build/config/sdkconfig.json	/^    "WPA_MBEDTLS_CRYPTO": true,
 WPA_TESTING_OPTIONS	build/config/sdkconfig.json	/^    "WPA_TESTING_OPTIONS": false,$/;"	b
 WPA_WPS_WARS	build/config/sdkconfig.json	/^    "WPA_WPS_WARS": false,$/;"	b
 WS_BUFFER_SIZE	build/config/sdkconfig.json	/^    "WS_BUFFER_SIZE": 1024$/;"	n
+_LIST_H_	components/list/list.h	/^#define _LIST_H_$/;"	d
+_UART_CONSOLE_H_	components/uart_console/uart_console.h	/^#define _UART_CONSOLE_H_$/;"	d
+_WIFI_H_	components/wifi/wifi.h	/^#define _WIFI_H_$/;"	d
 __XT_EXCEPTION_DESCS_	build/esp-idf/esp32/ld/esp32.project.ld	/^    __XT_EXCEPTION_DESCS_ = ABSOLUTE(.);$/;"	s
 __XT_EXCEPTION_DESCS_END__	build/esp-idf/esp32/ld/esp32.project.ld	/^    __XT_EXCEPTION_DESCS_END__ = ABSOLUTE(.);$/;"	s
 __XT_EXCEPTION_TABLE_	build/esp-idf/esp32/ld/esp32.project.ld	/^    __XT_EXCEPTION_TABLE_ = ABSOLUTE(.);$/;"	s
@@ -7026,6 +7124,8 @@ _thread_local_end	build/esp-idf/esp32/ld/esp32.project.ld	/^    _thread_local_en
 _thread_local_start	build/esp-idf/esp32/ld/esp32.project.ld	/^    _thread_local_start = ABSOLUTE(.);$/;"	s
 accel_config	components/accelerometer/accelerometer.c	/^void accel_config(spi_device_handle_t *spi) {$/;"	f	typeref:typename:void
 accelerometer	CMakeLists.txt	/^project(accelerometer)/;"	p
+add_cmd	components/uart_console/uart_console.c	/^void add_cmd(char *cmd_name, void *(*cmd_handler)(void *argc)) {$/;"	f	typeref:typename:void
+addr	components/include/components.h	/^    uint8_t             addr;           \/\/ I2C address$/;"	m	struct:s_display	typeref:typename:uint8_t
 after	build/esp-idf/esptool_py/flasher_args.json.in	/^        "after"  : "hard_reset",$/;"	s	object:extra_esptool_args
 after	build/flasher_args.json	/^        "after"  : "hard_reset",$/;"	s	object:extra_esptool_args
 app	build/esp-idf/esptool_py/flasher_args.json.in	/^    "app" : { "offset" : "0x10000", "file" : "$<TARGET_PROPERTY:__idf_build_target,EXECUTABLE_NA/;"	o
@@ -7035,10 +7135,12 @@ app_bin	build/project_description.json	/^    "app_bin":            "acceleromete
 app_elf	build/bootloader/project_description.json	/^    "app_elf":            "bootloader.elf",$/;"	s
 app_elf	build/project_description.json	/^    "app_elf":            "accelerometer.elf",$/;"	s
 app_main	main/main.c	/^void app_main(void) {$/;"	f	typeref:typename:void
+backspace	components/uart_console/uart_console.c	/^static void backspace(uint8_t *cursor, char *command) {$/;"	f	typeref:typename:void	file:
 before	build/esp-idf/esptool_py/flasher_args.json.in	/^        "before" : "default_reset",$/;"	s	object:extra_esptool_args
 before	build/flasher_args.json	/^        "before" : "default_reset",$/;"	s	object:extra_esptool_args
 bootloader	build/esp-idf/esptool_py/flasher_args.json.in	/^    "bootloader" : { "offset" : "0x1000", "file" : "bootloader\/bootloader.bin", "encrypted" : "/;"	o
 bootloader	build/flasher_args.json	/^    "bootloader" : { "offset" : "0x1000", "file" : "bootloader\/bootloader.bin", "encrypted" : "/;"	o
+buf	components/include/components.h	/^    uint8_t         *buf;$/;"	m	struct:s_app	typeref:typename:uint8_t *
 build_component_paths	build/bootloader/project_description.json	/^    "build_component_paths" : [ "\/home\/bril\/esp\/esp-idf\/components\/bootloader", "\/home\/b/;"	a
 build_component_paths	build/project_description.json	/^    "build_component_paths" : [ "\/home\/bril\/esp\/uvox\/components\/accelerometer", "\/home\/b/;"	a
 build_components	build/bootloader/project_description.json	/^    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp32", "esp_common", "/;"	a
@@ -7046,6 +7148,7 @@ build_components	build/project_description.json	/^    "build_components" : [ "ac
 build_dir	build/bootloader/project_description.json	/^    "build_dir":          "\/home\/bril\/esp\/uvox\/build\/bootloader",$/;"	s
 build_dir	build/project_description.json	/^    "build_dir":          "\/home\/bril\/esp\/uvox\/build",$/;"	s
 buttons_init	components/buttons/buttons.c	/^void buttons_init(void) {$/;"	f	typeref:typename:void
+changes	components/include/components.h	/^    uint16_t            changes;        \/\/ page change bit to optimize writes$/;"	m	struct:s_display	typeref:typename:uint16_t
 children	build/bootloader/config/kconfig_menus.json	/^                                                        "children": [],$/;"	a	object:17.children.1.children.6.children.0.children.12.children.0.children.0
 children	build/bootloader/config/kconfig_menus.json	/^                                                        "children": [],$/;"	a	object:17.children.1.children.6.children.0.children.12.children.0.children.1
 children	build/bootloader/config/kconfig_menus.json	/^                                                        "children": [],$/;"	a	object:17.children.1.children.6.children.0.children.12.children.0.children.2
@@ -9062,6 +9165,11 @@ children	build/config/kconfig_menus.json	/^        "children": [],$/;"	a	object:
 children	build/config/kconfig_menus.json	/^        "children": [],$/;"	a	object:9
 chip	build/esp-idf/esptool_py/flasher_args.json.in	/^        "chip"   : "esp32"$/;"	s	object:extra_esptool_args
 chip	build/flasher_args.json	/^        "chip"   : "esp32"$/;"	s	object:extra_esptool_args
+chromatic_mode	components/accelerometer/chromatic_mode.c	/^int chromatic_mode(int16_t accel_data,  char **note) {$/;"	f	typeref:typename:int
+clear_cmd_list	components/uart_console/uart_console.c	/^void clear_cmd_list() {$/;"	f	typeref:typename:void
+cmd_handler	components/uart_console/uart_console.h	/^    void *(*cmd_handler)(void *argc);$/;"	m	struct:s_console_cmd	typeref:typename:void * (*)(void * argc)
+cmd_list	components/uart_console/uart_console.c	/^static t_list *cmd_list = NULL;$/;"	v	typeref:typename:t_list *	file:
+cmd_name	components/uart_console/uart_console.h	/^    char *cmd_name;$/;"	m	struct:s_console_cmd	typeref:typename:char *
 command	build/bootloader/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:0
 command	build/bootloader/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:1
 command	build/bootloader/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:10
@@ -10018,8 +10126,15 @@ command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/to
 command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:892
 command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:893
 command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:894
+command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:895
+command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:896
+command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:897
+command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:898
+command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:899
 command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:9
 command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:90
+command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:900
+command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:901
 command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:91
 command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:92
 command	build/compile_commands.json	/^  "command": "\/home\/bril\/.espressif\/tools\/xtensa-esp32-elf\/esp-2020r3-8.4.0\/xtensa-esp32-/;"	s	object:93
@@ -10035,8 +10150,10 @@ config_environment	build/bootloader/project_description.json	/^    "config_envir
 config_environment	build/project_description.json	/^    "config_environment" : {$/;"	o
 config_file	build/bootloader/project_description.json	/^    "config_file":        "\/home\/bril\/esp\/uvox\/sdkconfig",$/;"	s
 config_file	build/project_description.json	/^    "config_file":        "\/home\/bril\/esp\/uvox\/sdkconfig",$/;"	s
+console_task	components/uart_console/uart_console.c	/^static void console_task(void *pvParameters) {$/;"	f	typeref:typename:void	file:
 const	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
 const	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
+data	components/list/list.h	/^    void *data;$/;"	m	struct:s_list	typeref:typename:void *
 depends_on	build/bootloader/config/kconfig_menus.json	/^                                                        "depends_on": "<choice SPIRAM_CACHE_WORK/;"	s	object:17.children.1.children.6.children.0.children.12.children.0.children.0
 depends_on	build/bootloader/config/kconfig_menus.json	/^                                                        "depends_on": "<choice SPIRAM_CACHE_WORK/;"	s	object:17.children.1.children.6.children.0.children.12.children.0.children.1
 depends_on	build/bootloader/config/kconfig_menus.json	/^                                                        "depends_on": "<choice SPIRAM_CACHE_WORK/;"	s	object:17.children.1.children.6.children.0.children.12.children.0.children.2
@@ -13007,8 +13124,15 @@ directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\
 directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:892
 directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:893
 directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:894
+directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:895
+directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:896
+directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:897
+directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:898
+directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:899
 directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:9
 directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:90
+directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:900
+directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:901
 directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:91
 directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:92
 directory	build/compile_commands.json	/^  "directory": "\/home\/bril\/esp\/uvox\/build",$/;"	s	object:93
@@ -13024,6 +13148,9 @@ encrypted	build/esp-idf/esptool_py/flasher_args.json.in	/^    "partition_table" 
 encrypted	build/flasher_args.json	/^    "app" : { "offset" : "0x10000", "file" : "accelerometer.bin", "encrypted" : "false" },$/;"	s	object:app
 encrypted	build/flasher_args.json	/^    "bootloader" : { "offset" : "0x1000", "file" : "bootloader\/bootloader.bin", "encrypted" : "/;"	s	object:bootloader
 encrypted	build/flasher_args.json	/^    "partition_table" : { "offset" : "0x8000", "file" : "partition_table\/partition-table.bin", /;"	s	object:partition_table
+enter_button	components/uart_console/uart_console.c	/^static void enter_button(char *command) {$/;"	f	typeref:typename:void	file:
+event_handler	components/wifi/wifi.c	/^static void event_handler(void* arg, esp_event_base_t event_base,$/;"	f	typeref:typename:void	file:
+exec_cmd_by_name	components/uart_console/uart_console.c	/^bool exec_cmd_by_name(t_list *cmd_list, char *name, char *args) {$/;"	f	typeref:typename:bool
 extra_esptool_args	build/esp-idf/esptool_py/flasher_args.json.in	/^    "extra_esptool_args" : {$/;"	o
 extra_esptool_args	build/flasher_args.json	/^    "extra_esptool_args" : {$/;"	o
 file	build/CMakeFiles/bootloader.dir/Labels.json	/^			"file" : "\/home\/bril\/esp\/uvox\/build\/CMakeFiles\/bootloader"$/;"	s	object:sources.0
@@ -13999,10 +14126,17 @@ file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/esp-idf\/compon
 file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/esp-idf\/components\/xtensa\/xtensa_intr_asm.S"$/;"	s	object:496
 file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/build\/project_elf_src_esp32.c"$/;"	s	object:0
 file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/build\/x509_crt_bundle.S"$/;"	s	object:5
-file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/accelerometer\/accelerometer.c"$/;"	s	object:892
-file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/accelerometer\/pwm_notes.c"$/;"	s	object:893
-file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/buttons\/buttons.c"$/;"	s	object:891
-file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/main\/main.c"$/;"	s	object:894
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/accelerometer\/accelerometer.c"$/;"	s	object:893
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/accelerometer\/chromatic_mode.c"$/;"	s	object:897
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/accelerometer\/leds.c"$/;"	s	object:894
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/accelerometer\/pentatonic_mode.c"$/;"	s	object:896
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/accelerometer\/pwm_notes.c"$/;"	s	object:895
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/buttons\/buttons.c"$/;"	s	object:892
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/list\/list.c"$/;"	s	object:898
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/oled\/oled.c"$/;"	s	object:891
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/uart_console\/uart_console.c"$/;"	s	object:899
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/components\/wifi\/wifi.c"$/;"	s	object:900
+file	build/compile_commands.json	/^  "file": "\/home\/bril\/esp\/uvox\/main\/main.c"$/;"	s	object:901
 file	build/esp-idf/esptool_py/flasher_args.json.in	/^    "app" : { "offset" : "0x10000", "file" : "$<TARGET_PROPERTY:__idf_build_target,EXECUTABLE_NA/;"	s	object:app
 file	build/esp-idf/esptool_py/flasher_args.json.in	/^    "bootloader" : { "offset" : "0x1000", "file" : "bootloader\/bootloader.bin", "encrypted" : "/;"	s	object:bootloader
 file	build/esp-idf/esptool_py/flasher_args.json.in	/^    "partition_table" : { "offset" : "0x8000", "file" : "partition_table\/partition-table.bin", /;"	s	object:partition_table
@@ -14019,6 +14153,9 @@ flash_settings	build/esp-idf/esptool_py/flasher_args.json.in	/^    "flash_settin
 flash_settings	build/flasher_args.json	/^    "flash_settings" : {$/;"	o
 flash_size	build/esp-idf/esptool_py/flasher_args.json.in	/^        "flash_size": "detect",$/;"	s	object:flash_settings
 flash_size	build/flasher_args.json	/^        "flash_size": "detect",$/;"	s	object:flash_settings
+font6x8	components/oled/font6x8.h	/^static uint8_t font6x8[] =$/;"	v	typeref:typename:uint8_t[]
+font8x16	components/oled/font8x16.h	/^static uint8_t font8x16[] =$/;"	v	typeref:typename:uint8_t[]
+font_str	components/include/components.h	/^    uint8_t *           font_str;       \/\/ page buffer$/;"	m	struct:s_display	typeref:typename:uint8_t *
 git_revision	build/bootloader/project_description.json	/^    "git_revision":       "v4.3-dev-2136-gb0150615d",$/;"	s
 git_revision	build/project_description.json	/^    "git_revision":       "v4.3-dev-2136-gb0150615d",$/;"	s
 gpio_button_evt_queue	components/buttons/buttons.h	/^xQueueHandle gpio_button_evt_queue;$/;"	v	typeref:typename:xQueueHandle
@@ -15917,6 +16054,7 @@ help	build/config/kconfig_menus.json	/^        "help": null,$/;"	z	object:5
 help	build/config/kconfig_menus.json	/^        "help": null,$/;"	z	object:6
 help	build/config/kconfig_menus.json	/^        "help": null,$/;"	z	object:7
 help	build/config/kconfig_menus.json	/^        "help": null,$/;"	z	object:9
+history_iterator	components/include/components.h	/^    int             history_iterator;$/;"	m	struct:s_app	typeref:typename:int
 id	build/bootloader/config/kconfig_menus.json	/^                                                        "id": "SPIRAM_CACHE_WORKAROUND_STRATEGY_/;"	s	object:17.children.1.children.6.children.0.children.12.children.0.children.0
 id	build/bootloader/config/kconfig_menus.json	/^                                                        "id": "SPIRAM_CACHE_WORKAROUND_STRATEGY_/;"	s	object:17.children.1.children.6.children.0.children.12.children.0.children.1
 id	build/bootloader/config/kconfig_menus.json	/^                                                        "id": "SPIRAM_CACHE_WORKAROUND_STRATEGY_/;"	s	object:17.children.1.children.6.children.0.children.12.children.0.children.2
@@ -17967,6 +18105,8 @@ info_version_internal	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^c
 info_version_internal	build/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
 info_version_internal	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
 info_version_internal	build/bootloader/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+init_timer_chanel	components/accelerometer/leds.c	/^static void init_timer_chanel(ledc_timer_config_t *ledc_timer,$/;"	f	typeref:typename:void	file:
+init_uart_console	components/uart_console/uart_console.c	/^void init_uart_console(uart_config_t *uart_config, uint8_t console_priority) {$/;"	f	typeref:typename:void
 is_menuconfig	build/bootloader/config/kconfig_menus.json	/^                "is_menuconfig": true,$/;"	b	object:16.children.2
 is_menuconfig	build/config/kconfig_menus.json	/^                                "is_menuconfig": true,$/;"	b	object:18.children.2.children.1.children.26
 is_menuconfig	build/config/kconfig_menus.json	/^                                "is_menuconfig": true,$/;"	b	object:18.children.2.children.1.children.6
@@ -17984,8 +18124,13 @@ is_menuconfig	build/config/kconfig_menus.json	/^                        "is_menu
 is_menuconfig	build/config/kconfig_menus.json	/^                        "is_menuconfig": true,$/;"	b	object:18.children.48.children.4
 is_menuconfig	build/config/kconfig_menus.json	/^                "is_menuconfig": true,$/;"	b	object:17.children.2
 is_menuconfig	build/config/kconfig_menus.json	/^                "is_menuconfig": true,$/;"	b	object:18.children.3
+iterator	components/include/components.h	/^    int             iterator;$/;"	m	struct:s_app	typeref:typename:int
 labels	build/CMakeFiles/bootloader.dir/Labels.json	/^		"labels" : $/;"	a	object:target
-line_1	components/accelerometer/accelerometer.c	/^int line_1(int accel_data) {$/;"	f	typeref:typename:int
+len	components/include/components.h	/^    int             len;$/;"	m	struct:s_app	typeref:typename:int
+line_1	components/accelerometer/chromatic_mode.c	/^static int line_1(int16_t accel_data, char **note) {$/;"	f	typeref:typename:int	file:
+line_1	components/accelerometer/pentatonic_mode.c	/^static int line_1(int16_t accel_data, char **note) {$/;"	f	typeref:typename:int	file:
+line_2	components/accelerometer/chromatic_mode.c	/^static int line_2(int16_t accel_data,  char **note) {$/;"	f	typeref:typename:int	file:
+line_2	components/accelerometer/pentatonic_mode.c	/^static int line_2(int16_t accel_data, char **note) {$/;"	f	typeref:typename:int	file:
 main	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^int main(argc, argv) int argc; char *argv[];$/;"	f
 main	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f	typeref:typename:void
 main	build/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	typeref:typename:int
@@ -17996,6 +18141,14 @@ monitor_baud	build/bootloader/project_description.json	/^    "monitor_baud" :   
 monitor_baud	build/project_description.json	/^    "monitor_baud" :      "115200",$/;"	s
 monitor_toolprefix	build/bootloader/project_description.json	/^    "monitor_toolprefix": "xtensa-esp32-elf-",$/;"	s
 monitor_toolprefix	build/project_description.json	/^    "monitor_toolprefix": "xtensa-esp32-elf-",$/;"	s
+move_arrow	components/uart_console/uart_console.c	/^static void move_arrow(uint8_t *cursor, char *command, uint32_t dtmp) {$/;"	f	typeref:typename:void	file:
+mx_create_node	components/list/list.c	/^t_list *mx_create_node(void *data) {$/;"	f	typeref:typename:t_list *
+mx_list_foreach	components/list/list.c	/^void mx_list_foreach(t_list *head, void (funct)(void*)) {$/;"	f	typeref:typename:void
+mx_list_size	components/list/list.c	/^int mx_list_size(t_list *list) {$/;"	f	typeref:typename:int
+mx_pop_back	components/list/list.c	/^void mx_pop_back(t_list **head) {$/;"	f	typeref:typename:void
+mx_pop_front	components/list/list.c	/^void mx_pop_front(t_list **head) {$/;"	f	typeref:typename:void
+mx_push_back	components/list/list.c	/^void mx_push_back(t_list **list, void *data) {$/;"	f	typeref:typename:void
+mx_push_front	components/list/list.c	/^void mx_push_front(t_list **list, void *data) {$/;"	f	typeref:typename:void
 name	build/CMakeFiles/bootloader.dir/Labels.json	/^		"name" : "bootloader"$/;"	s	object:target
 name	build/bootloader/config/kconfig_menus.json	/^                                                        "name": "SPIRAM_CACHE_WORKAROUND_STRATEG/;"	s	object:17.children.1.children.6.children.0.children.12.children.0.children.0
 name	build/bootloader/config/kconfig_menus.json	/^                                                        "name": "SPIRAM_CACHE_WORKAROUND_STRATEG/;"	s	object:17.children.1.children.6.children.0.children.12.children.0.children.1
@@ -19891,6 +20044,7 @@ name	build/config/kconfig_menus.json	/^        "name": "IDF_TARGET_ESP32",$/;"	s
 name	build/config/kconfig_menus.json	/^        "name": "IDF_TARGET_ESP32S2",$/;"	s	object:6
 name	build/config/kconfig_menus.json	/^        "name": "IDF_TARGET_ESP32S3",$/;"	s	object:7
 name	build/config/kconfig_menus.json	/^        "name": "IDF_TARGET_ESP32S3_BETA_VERSION",$/;"	s	object:8
+next	components/list/list.h	/^    struct s_list *next;$/;"	m	struct:s_list	typeref:struct:s_list *
 notes	components/accelerometer/pwm_notes.c	/^void notes(int16_t freq, int16_t  duty) {$/;"	f	typeref:typename:void
 offset	build/esp-idf/esptool_py/flasher_args.json.in	/^    "app" : { "offset" : "0x10000", "file" : "$<TARGET_PROPERTY:__idf_build_target,EXECUTABLE_NA/;"	s	object:app
 offset	build/esp-idf/esptool_py/flasher_args.json.in	/^    "bootloader" : { "offset" : "0x1000", "file" : "bootloader\/bootloader.bin", "encrypted" : "/;"	s	object:bootloader
@@ -19898,18 +20052,27 @@ offset	build/esp-idf/esptool_py/flasher_args.json.in	/^    "partition_table" : {
 offset	build/flasher_args.json	/^    "app" : { "offset" : "0x10000", "file" : "accelerometer.bin", "encrypted" : "false" },$/;"	s	object:app
 offset	build/flasher_args.json	/^    "bootloader" : { "offset" : "0x1000", "file" : "bootloader\/bootloader.bin", "encrypted" : "/;"	s	object:bootloader
 offset	build/flasher_args.json	/^    "partition_table" : { "offset" : "0x8000", "file" : "partition_table\/partition-table.bin", /;"	s	object:partition_table
+oled_clear	components/oled/oled.c	/^void oled_clear(t_display *display) {$/;"	f	typeref:typename:void
+oled_config	components/oled/oled.c	/^void oled_config(t_display *display) {$/;"	f	typeref:typename:void
+oled_init	components/oled/oled.c	/^void oled_init(t_display *display) {$/;"	f	typeref:typename:void
+oled_initial_settings	components/oled/oled.c	/^void oled_initial_settings(t_display *display) {$/;"	f	typeref:typename:void
+oled_update	components/oled/oled.c	/^void oled_update(t_display *display, char *str1, char *str2) {$/;"	f	typeref:typename:void
 org	build/esp-idf/esp32/esp32_out.ld	/^  iram0_0_seg (RX) : org = 0x40080000, len = 0x20000$/;"	s
 partition_table	build/esp-idf/esptool_py/flasher_args.json.in	/^    "partition_table" : { "offset" : "0x8000", "file" : "partition_table\/partition-table.bin", /;"	o
 partition_table	build/flasher_args.json	/^    "partition_table" : { "offset" : "0x8000", "file" : "partition_table\/partition-table.bin", /;"	o
-pentatonic_mode	components/accelerometer/accelerometer.c	/^int pentatonic_mode(int accel_data) {$/;"	f	typeref:typename:int
+pentatonic_mode	components/accelerometer/pentatonic_mode.c	/^int pentatonic_mode(int16_t accel_data, char **note) {$/;"	f	typeref:typename:int
 phy_data_partition	build/bootloader/project_description.json	/^    "phy_data_partition": "",$/;"	s
 phy_data_partition	build/project_description.json	/^    "phy_data_partition": "",$/;"	s
+port	components/include/components.h	/^    i2c_port_t          port;           \/\/ I2C interface port$/;"	m	struct:s_display	typeref:typename:i2c_port_t
 power_managment	components/accelerometer/accelerometer.c	/^static void power_managment(spi_device_handle_t spi, uint8_t reg_power_ctl,$/;"	f	typeref:typename:void	file:
 print_error	components/accelerometer/accelerometer.c	/^static void print_error(char *str) {$/;"	f	typeref:typename:void	file:
+printchar	components/uart_console/uart_console.c	/^static void printchar(uint8_t *cursor, char *command, char *dtmp, uart_event_t *event) {$/;"	f	typeref:typename:void	file:
 project_name	build/bootloader/project_description.json	/^    "project_name":       "bootloader",$/;"	s
 project_name	build/project_description.json	/^    "project_name":       "accelerometer",$/;"	s
 project_path	build/bootloader/project_description.json	/^    "project_path":       "\/home\/bril\/esp\/esp-idf\/components\/bootloader\/subproject",$/;"	s
 project_path	build/project_description.json	/^    "project_path":       "\/home\/bril\/esp\/uvox",$/;"	s
+put_char_under_cursor	components/uart_console/uart_console.c	/^static void put_char_under_cursor(uint8_t *cursor, char *command, char ch) {$/;"	f	typeref:typename:void	file:
+pwm_leds	components/accelerometer/leds.c	/^void pwm_leds(int16_t duty) {$/;"	f	typeref:typename:void
 qnxnto	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
 qnxnto	build/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
 qnxnto	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
@@ -21640,12 +21803,24 @@ range	build/config/kconfig_menus.json	/^        "range": null,$/;"	z	object:7
 range	build/config/kconfig_menus.json	/^        "range": null,$/;"	z	object:9
 read_acceleration	components/accelerometer/accelerometer.c	/^static void read_acceleration (spi_device_handle_t spi, int16_t *accs) {$/;"	f	typeref:typename:void	file:
 read_acceleration_task	components/accelerometer/accelerometer.c	/^void read_acceleration_task(void* pvParameters) {$/;"	f	typeref:typename:void
-small	components/accelerometer/accelerometer.c	/^int small(int accel_data) {$/;"	f	typeref:typename:int
+s_app	components/include/components.h	/^typedef struct s_app {$/;"	s
+s_console_cmd	components/uart_console/uart_console.h	/^typedef struct s_console_cmd {$/;"	s
+s_display	components/include/components.h	/^typedef struct s_display {$/;"	s
+s_list	components/list/list.h	/^typedef struct s_list {$/;"	s
+s_retry_num	components/wifi/wifi.c	/^static uint8_t s_retry_num = 0;$/;"	v	typeref:typename:uint8_t	file:
+s_wifi_event_group	components/wifi/wifi.c	/^static EventGroupHandle_t s_wifi_event_group = NULL;$/;"	v	typeref:typename:EventGroupHandle_t	file:
+send_to_oled	components/oled/oled.c	/^void send_to_oled(t_display *display, char *str1, char *str2) {$/;"	f	typeref:typename:void
 soc_reserved_memory_region_end	build/esp-idf/esp32/ld/esp32.project.ld	/^    soc_reserved_memory_region_end = ABSOLUTE(.);$/;"	s
 soc_reserved_memory_region_start	build/esp-idf/esp32/ld/esp32.project.ld	/^    soc_reserved_memory_region_start = ABSOLUTE(.);$/;"	s
 sources	build/CMakeFiles/bootloader.dir/Labels.json	/^	"sources" : $/;"	a
+str_for_execute	components/include/components.h	/^    char            *str_for_execute;$/;"	m	struct:s_app	typeref:typename:char *
+strjoin_with_delim	components/wifi/wifi.c	/^char *strjoin_with_delim(char *s1, char *s2, char delim) {$/;"	f	typeref:typename:char *
 stub	build/esp-idf/esptool_py/flasher_args.json.in	/^        "stub"   : true,$/;"	b	object:extra_esptool_args
 stub	build/flasher_args.json	/^        "stub"   : true,$/;"	b	object:extra_esptool_args
+t_app	components/include/components.h	/^} t_app;$/;"	t	typeref:struct:s_app
+t_console_cmd	components/uart_console/uart_console.h	/^} t_console_cmd;$/;"	t	typeref:struct:s_console_cmd
+t_display	components/include/components.h	/^} t_display;$/;"	t	typeref:struct:s_display
+t_list	components/list/list.h	/^} t_list;$/;"	t	typeref:struct:s_list
 target	build/CMakeFiles/bootloader.dir/Labels.json	/^	"target" : $/;"	o
 target	build/bootloader/project_description.json	/^    "target":             "esp32",$/;"	s
 target	build/project_description.json	/^    "target":             "esp32",$/;"	s
@@ -25677,9 +25852,18 @@ type	build/config/kconfig_menus.json	/^        "type": "menu"$/;"	s	object:17
 type	build/config/kconfig_menus.json	/^        "type": "menu"$/;"	s	object:18
 type	build/config/kconfig_menus.json	/^        "type": "menu"$/;"	s	object:19
 type	build/config/kconfig_menus.json	/^        "type": "string"$/;"	s	object:4
+uart0_queue	components/uart_console/uart_console.c	/^static QueueHandle_t uart0_queue;$/;"	v	typeref:typename:QueueHandle_t	file:
+uart_print_nl	components/uart_console/uart_console.c	/^void uart_print_nl() {$/;"	f	typeref:typename:void
+uart_printstr	components/uart_console/uart_console.c	/^void uart_printstr(char *str) {$/;"	f	typeref:typename:void
 volatile	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^# define volatile$/;"	d	file:
 volatile	build/bootloader/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^# define volatile$/;"	d	file:
+wifi_connect_nvs	components/wifi/wifi.c	/^uint8_t wifi_connect_nvs(void) {$/;"	f	typeref:typename:uint8_t
+wifi_init_sta	components/wifi/wifi.c	/^static void wifi_init_sta(char *ssid, char *passwd) {$/;"	f	typeref:typename:void	file:
+wifi_print_success_message	components/wifi/wifi.c	/^void wifi_print_success_message(void) {$/;"	f	typeref:typename:void
+wifi_set_last_ssid	components/wifi/wifi.c	/^void wifi_set_last_ssid(char *ssid, char *passwd) {$/;"	f	typeref:typename:void
+wifi_sta_connect	components/wifi/wifi.c	/^void *wifi_sta_connect(void *arg) {$/;"	f	typeref:typename:void *
 write_flash_args	build/esp-idf/esptool_py/flasher_args.json.in	/^    "write_flash_args" : [ "--flash_mode", "dio",$/;"	a
 write_flash_args	build/flasher_args.json	/^    "write_flash_args" : [ "--flash_mode", "dio",$/;"	a
+write_to_buffer	components/oled/oled.c	/^void write_to_buffer(t_display *display, char *str1, char *str2) {$/;"	f	typeref:typename:void
 x509_crt_bundle	build/x509_crt_bundle.S	/^x509_crt_bundle:$/;"	l
 x509_crt_bundle_length	build/x509_crt_bundle.S	/^x509_crt_bundle_length:$/;"	l

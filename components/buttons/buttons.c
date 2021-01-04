@@ -17,24 +17,6 @@ static void IRAM_ATTR gpio_isr_handler(void *arg) {
     xQueueSendFromISR(gpio_button_evt_queue, &gpio_num, NULL);
 }
 
-// static void button_task(void *arg) {
-    // uint32_t io_num;
-
-    // for(;;) {
-        // if(xQueueReceive(gpio_button_evt_queue, &io_num, portMAX_DELAY)) {
-            // if (io_num == GPIO_INPUT_IO_0) {
-                // while(gpio_get_level(GPIO_INPUT_IO_0) == 0) {
-                    // xTaskNotifyGiveIndexed(accelerometer_task_handler, 0);
-                // } 
-                // // for(int i = 0; gpio_get_level(GPIO_INPUT_IO_0) == 0; i++)
-            // }
-            // else {
-                // gpio_set_level(GPIO_OUTPUT_IO_1, led_status2);
-            // }
-        // }
-    // }
-// }
-
 void buttons_init(void) {
     esp_err_t rc = ESP_OK;
     char buf[BUF_LEN];
@@ -57,7 +39,6 @@ void buttons_init(void) {
         printf("line %d: Not enought heap\n", (__LINE__ - 1));
         return;
     }
-    // xTaskCreate(button_task, "button_task", 2048, NULL, 10, NULL);
     if ((rc = gpio_isr_handler_add(GPIO_INPUT_IO_0,
                                    gpio_isr_handler,
                                    (void*) GPIO_INPUT_IO_0)) != ESP_OK) {
