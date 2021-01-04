@@ -28,7 +28,6 @@ static void pwm_leds(ledc_channel_config_t *ledc_channel, int16_t duty) {
     duty = (duty > 250) ? 250 : duty;
     duty += 252;
     duty = duty / 2;
-    printf("duty = %d\n" ,duty);
 
     if (!ledc_channel)
         return;
@@ -54,7 +53,6 @@ void leds_on(void *arg) {
     ledc_fade_func_install(0);
 
     while(1) {
-        printf("nota for led = %d\n", (int) app->note);
         pwm_leds(&ledc_channel[0], app->acclr[0]);
         vTaskDelay(LEDS_DELAY / portTICK_PERIOD_MS);
     }

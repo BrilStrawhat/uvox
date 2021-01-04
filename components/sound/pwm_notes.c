@@ -90,32 +90,34 @@ void pwm_note_task(void *arg) {
     int16_t duty = 0;
     uint8_t io_num;
 
+    ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, 440);
     while (1) {
-        if (old_note != app->note) {
             duty = app->acclr[1];
             if (duty < 0)
-                duty *= -16;
-            printf("%x\n", DEFAULT_DUTY + duty);
-            ledc_set_duty(ledc_channel.speed_mode, ledc_channel.channel, DEFAULT_DUTY + duty);
+                duty *= -2;
+            else
+                duty *= 16;
+            printf("DUTY = %d\n", duty + DEFAULT_DUTY);
+            printf("DUTY = %d\n", duty);
+            printf("ACCLR = %d\n", app->acclr[1]);
+            ledc_set_duty(ledc_channel.speed_mode, ledc_channel.channel, duty);
             ledc_update_duty(ledc_channel.speed_mode, ledc_channel.channel);
-            ledc_set_freq(LEDC_LS_MODE, LEDC_LS_TIMER, app->note);
-            oled_clear(display);
-            send_to_oled(display, app->note_to_oled, NULL); // NULL - for duty
-            old_note = app->note;
-        }
-        //todo check delay
+            if (old_note != app->note) {
+                oled_clear(display);
+                send_to_oled(display, app->note_to_oled, NULL); // NULL - for duty
+                old_note = app->note;
+            }
         while (xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
-            printf("delay = %d\n", app->delay);
-            if (io_num == GPIO_INPUT_IO_0 && app->delay < 65500) {
-                printf("++++++++++++\n");
+            if (io_num == GPIO_INPUT_IO_0 && app->delay < 60000) {
                 app->delay += 50;
             }
             else if (app->delay > 0) {
-                printf("-----------------\n");
                 app->delay -= 50;
             }
         }
+//        printf("\nIN SOUND delay = %d\n", app->delay);
         vTaskDelay(app->delay / portTICK_PERIOD_MS);
+//        vTaskDelay(2000/ portTICK_PERIOD_MS);
     }
 
 }

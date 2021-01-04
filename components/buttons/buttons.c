@@ -54,17 +54,24 @@ void buttons_init(void) {
     }
 }
 
-void *change_delay_cmd(char **argv) {
-    char *delay = NULL;
-    uint16_t result = 0;
-
-    delay = argv[1];
-
-    if ((result = atoi(delay)) >= 50) {
-        xQueueSend(gpio_button_evt_queue, &result, portMAX_DELAY);
+int change_delay_cmd(t_app *app, char **argv) {
+    if (argv[1]) {
+        uint16_t result = atoi(argv[1]);
+        if (result >= 50 && result <= 60000) {
+            app->delay = result;
+            xQueueSend(gpio_button_evt_queue, &result, portMAX_DELAY);
+            return 0;
+        }
+        else {
+            uart_printstr(ERR_BAD_ARG);
+        }
     }
-    else
-        uart_printstr("Too small delay");
-    return NULL;
+    else if (!argv[1]) {
+        uart_printstr(ERR_ADD_PARAM);
+    }
+    else {
+        uart_printstr(ERR_TO_MANY_ARG);
+    }
+    return -1;
 }
 

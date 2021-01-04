@@ -13,6 +13,6 @@ xQueueHandle gpio_button_evt_queue;
 
 
 void buttons_init(void);
-void *change_delay_cmd(char **argv);
+int change_delay_cmd(t_app *app, char **argv);
 
 #endif

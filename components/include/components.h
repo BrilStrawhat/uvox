@@ -78,6 +78,7 @@ typedef struct s_app {
     bool            pentatonic;
     char            note_to_oled[3];
     bool            del_oled_tsk;
+    int             duty;
 } t_app;
 
 void uart_print_nl();

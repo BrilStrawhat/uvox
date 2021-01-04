@@ -2,16 +2,16 @@
 
 static void print_command_list() {
     char *arr_com[10];
-    arr_com[0] = "\x1b[36mlog\x1b[0m           displaying temperature and humidity in console\n\r";
-    arr_com[1] = "\x1b[36mled on\x1b[0m        [LED number(1 - 3)]\n\r";
-    arr_com[2] = "\x1b[36mled off\x1b[0m       [LED number(1 - 3)]\n\r";
-    arr_com[3] = "\x1b[36mled pulse\x1b[0m     [LED number(1 - 3)], [frequency(0.1 - 1.9)]\n\r";
-    arr_com[4] = "\x1b[36mset_time\x1b[0m      [hh:mm:ss] set new time\n\r";
-    arr_com[5] = "\x1b[36mset_alarm\x1b[0m     [hh:mm:ss] makes noise when that time comes\n\r";
-    arr_com[6] = "\x1b[36mstop_alarm\x1b[0m    whithout parameters\n\r";
-    arr_com[7] = "\x1b[36msound on\x1b[0m      make some noise\n\r";
-    arr_com[8] = "\x1b[36msound off\x1b[0m     stop some noise\n\r";
-    arr_com[9] = "\x1b[36mclear\x1b[0m         behavior standard command\n\r";
+    arr_com[0] = "\x1b[36mleds_on\x1b[0m\n\r";
+    arr_com[1] = "\x1b[36mleds_off\x1b[0m\n\r";
+    arr_com[2] = "\x1b[36mset_note\x1b[0m\n\r";
+    arr_com[3] = "\x1b[36mset_temp\x1b[0m\n\r";
+    arr_com[4] = "\x1b[36mset_scale\x1b[0m\n\r";
+    arr_com[5] = "\x1b[36msound_off\x1b[0m\n\r";
+    arr_com[6] = "\x1b[36msound_on\x1b[0m\n\r";
+    arr_com[7] = "\x1b[36macclr\x1b[0m\n\r";
+    arr_com[8] = "\x1b[36mwifi_sta_connect\x1b[0m\n\r";
+    arr_com[9] = "\x1b[36mclear\x1b[0m\n\r";
 
     for(int i = 0; i < 10; i++)
         uart_write_bytes(UART_NUM_1, arr_com[i], strlen(arr_com[i]));
@@ -20,12 +20,12 @@ static void print_command_list() {
 int set_note (t_app *app, char **argv) {
     vTaskSuspend(app->acclr_task);
     if (argv[1]) {
-        app->note = atoi(argv[1]);
-        app->note *= -1;
-        printf("app->note =     %d\n", app->note);// should be some function;
+        app->acclr[0] = atoi(argv[1]);
+        app->acclr[0] *= -1;
+        printf("app->note =     %d\n", app->acclr[0]);// should be some function;
         memset(&app->note_to_oled, 0, 3);
-        app->note = (app->pentatonic == 1) ? (pentatonic_mode(app->note, app->note_to_oled))
-                                           : (chromatic_mode(app->note, app->note_to_oled));
+        app->note = (app->pentatonic == 1) ? (pentatonic_mode(app->acclr[0], app->note_to_oled))
+                                           : (chromatic_mode(app->acclr[0], app->note_to_oled));
         printf("NOTE = %s\n", app->note_to_oled);
         return 0;
     }
@@ -99,7 +99,7 @@ int command_execution(t_cli *cli,  t_app *app) {
             exit_status = set_note(app, argv);
         }
         else if(!strcmp("set_temp", argv[0])) {
-            change_delay_cmd(argv);
+            exit_status = change_delay_cmd(app, argv);
         }
         else if (!strcmp("set_scale", argv[0])) {
             exit_status = set_scale(app, argv);
@@ -110,11 +110,18 @@ int command_execution(t_cli *cli,  t_app *app) {
         else if (!strcmp("sound_on", argv[0])) {
            sound_on(app);
         }
-        else if (!strcmp("standard_mode", argv[0])) {
+        else if (!strcmp("d", argv[0]) && argv[1]) {
+            app->duty = atoi(argv[1]);
+        }
+        else if (!strcmp("acclr_mode", argv[0])) {
             vTaskResume(app->acclr_task);
         }
         else if(!strcmp("wifi_sta_connect", argv[0])) {
             wifi_sta_connect((void *)cli->str_for_execute); // 1 аргумент - команда
+        }
+        else if(!strcmp("clear", argv[0]) && !argv[1]) {
+            uart_write_bytes(UART_NUM_1, "\e[2J",sizeof("\e[2J"));
+            uart_write_bytes(UART_NUM_1, "\e[0;0f",sizeof("\e[0;0f"));
         }
         else {
             uart_write_bytes( UART_NUM_1, ERR_COMM_NOT_FOUND, sizeof(ERR_COMM_NOT_FOUND));

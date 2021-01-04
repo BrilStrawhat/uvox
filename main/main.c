@@ -3,6 +3,7 @@
 #include "buttons.h"
 #include "wifi.h"
 #include "uart_console.h"
+
 void init_struct(t_app *app) {
     app->leds_task = NULL;
     app->oled_task = NULL;
@@ -12,6 +13,7 @@ void init_struct(t_app *app) {
     memset(&app->note_to_oled, 0, 3);
     app->pentatonic = 1;
     app->delay = 500;
+    app->duty = 1;
 }
 
 void app_main(void) {
