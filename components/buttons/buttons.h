@@ -11,5 +11,6 @@
 xQueueHandle gpio_button_evt_queue;
 
 void buttons_init(void);
+void *change_delay_cmd(void *arg);
 
 #endif

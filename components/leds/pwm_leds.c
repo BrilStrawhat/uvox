@@ -1,21 +1,4 @@
-#include "accelerometer.h"
-
-#define GPIO_LED_1 26
-#define MAX_DUTY 255
-#define MIN_FADE 0
-#define FADE_TIME 10
-
-#define LED1                    27u
-#define LED2                    26u
-#define GPIO_OUTPUT_PIN_SEL     ((1ULL << LED1) |\
-                                 (1ULL << LED2))
-
-#define LEDC_TEST_CH_NUM       (3)
-#define LEDC_HS_CH0_GPIO       (26)
-#define LEDC_HS_CH1_GPIO       (27)
-#define LEDC_HS_CH2_GPIO       (33)
-#define LEDC_HS_CH0_CHANNEL    LEDC_CHANNEL_0
-
+#include "leds.h"
 
 static void init_timer_chanel(ledc_timer_config_t *ledc_timer,
                        ledc_channel_config_t *ledc_channel, uint8_t led_num, uint8_t channel) {
@@ -40,7 +23,7 @@ static void init_timer_chanel(ledc_timer_config_t *ledc_timer,
 
 }
 
-static void PWM_method(ledc_channel_config_t *ledc_channel, int16_t  duty) {
+static void pwm_leds(ledc_channel_config_t *ledc_channel, int16_t duty) {
     duty = -duty;
     duty = (duty < -250) ? -250 : duty;
     duty = (duty > 250) ? 250 : duty;
@@ -57,11 +40,41 @@ static void PWM_method(ledc_channel_config_t *ledc_channel, int16_t  duty) {
     vTaskDelay(30 / portTICK_PERIOD_MS);
 }
 
-void pwm_leds(int16_t duty) {
+
+void leds_on(void *arg) {
+    t_app *app = (t_app *)arg;
+    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_26, GPIO_MODE_OUTPUT));
+    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_27, GPIO_MODE_OUTPUT));
+    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_33, GPIO_MODE_OUTPUT));
+
     ledc_timer_config_t ledc_timer[LEDC_TEST_CH_NUM];
     ledc_channel_config_t ledc_channel[LEDC_TEST_CH_NUM];
     init_timer_chanel(&ledc_timer[0], &ledc_channel[0], LEDC_HS_CH0_GPIO, LEDC_HS_CH0_CHANNEL);
     init_timer_chanel(&ledc_timer[1], &ledc_channel[1], LEDC_HS_CH1_GPIO, LEDC_HS_CH0_CHANNEL);
     init_timer_chanel(&ledc_timer[2], &ledc_channel[2], LEDC_HS_CH2_GPIO, LEDC_HS_CH0_CHANNEL);
-    PWM_method(&ledc_channel[0], duty);
+
+    while(1) {
+        printf("nota for led = %d\n", (int) app->note);
+
+        pwm_leds(&ledc_channel[0], app->acclr[0]);
+        vTaskDelay(LEDS_DELAY / portTICK_PERIOD_MS);
+    }
 }
+
+int8_t leds_off(t_app *app, char **argv) {
+    if(!argv[1]){
+        if(app->leds_task != NULL) {
+            vTaskDelete(app->leds_task);
+            app->leds_task = NULL;
+        }
+        ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_26, GPIO_MODE_INPUT));
+        ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_27, GPIO_MODE_INPUT));
+        ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_33, GPIO_MODE_INPUT));
+        return 0;
+    }
+    else {
+        uart_write_bytes(UART_NUM_1, ERR_TO_MANY_ARG, sizeof(ERR_TO_MANY_ARG));
+        return -1;
+    }
+}
+

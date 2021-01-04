@@ -12,31 +12,21 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
-#include "driver/uart.h"
 #include "esp_system.h"
 #include "driver/gpio.h"
 #include "driver/timer.h"
 
 #include "esp_err.h"
+#include "driver/i2c.h"
 #include "driver/ledc.h"
-#include "driver/i2c.h"
-#include "driver/i2c.h"
+#include "driver/uart.h"
 
-////////////////////////////////////////////////////      console
-#define UART_TX_PIN                     17
-#define UART_RX_PIN                     16
-#define BUF_SIZE                        1024
+///////////////////////////////////////////////////
+#define ERR_COMM_NOT_FOUND              "\n\x1b[31mrtos: command not found\n\r\x1b[0m"
+#define ERR_TO_MANY_ARG                 "\n\x1b[31mrtos: too many arguments\n\r\x1b[0m"
+#define ERR_BAD_ARG                     "\n\x1b[31mrtos: bad argument\n\r\x1b[0m"
+#define ERR_ADD_PARAM                   "\n\x1b[31mrtos: please add parameters\n\r\x1b[0m"
 
-#define ERR_COMM_NOT_FOUND              "\x1b[31mrtos: command not found\n\r\x1b[0m"
-#define ERR_TO_MANY_ARG                 "\x1b[31mrtos: too many arguments\n\r\x1b[0m"
-#define ERR_BAD_ARG                     "\x1b[31mrtos: bad argument\n\r\x1b[0m"
-#define ERR_ADD_PARAM                   "\x1b[31mrtos: please add parameters\n\r\x1b[0m"
-
-#define SIZE_STR_FOR_EXECUTE            120
-#define ENTER                           13
-#define MAX_SIZE_BUF                    120
-#define DELETE                          127
-////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////        notes
 #define B_SMALL         123
@@ -77,11 +67,15 @@ typedef struct s_display {
 
 
 typedef struct s_app {
-    uint8_t         *buf;
-    char            *str_for_execute;
-    int             iterator;
-    int             len;
-    int             history_iterator;
-} t_app;
+    TaskHandle_t	leds_task;
+    TaskHandle_t	oled_task;
+    TaskHandle_t	sound_task;
+    TaskHandle_t	acclr_task;
+    int16_t         acclr[3];
+    uint16_t        note;
+    bool            pentatonic;
+    char            note_to_oled[3];
+}t_app;
+
 
 #endif
