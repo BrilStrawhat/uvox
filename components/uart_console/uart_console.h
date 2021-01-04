@@ -31,8 +31,6 @@ typedef struct s_cli {
 void data_from_uart(void *data);
 int command_execution(t_cli *cli,  t_app *app);
 void simple_simbols_handler(t_cli *cli, t_app *app);
-void uart_print_nl();
-void uart_printstr(char *str);
 _Bool printable_char(char *buf);
 
 #endif

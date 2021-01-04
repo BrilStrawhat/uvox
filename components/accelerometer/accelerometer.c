@@ -69,8 +69,7 @@ void read_acceleration_task(void* arg) {
         app->note = (app->pentatonic == 1) ? (pentatonic_mode(app->acclr[0], app->note_to_oled))
                 : (chromatic_mode(app->acclr[0], app->note_to_oled));
         printf("NOTE = %s\n", app->note_to_oled);
-
-        vTaskDelay(1000/ portTICK_PERIOD_MS);
+        vTaskDelay(10/ portTICK_PERIOD_MS);
     }
 }
 

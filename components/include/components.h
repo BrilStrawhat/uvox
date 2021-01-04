@@ -58,6 +58,7 @@
 
 #define DEFAULT_DUTY            0x0
 
+
 typedef struct s_display {
     uint8_t             addr;           // I2C address
     i2c_port_t          port;           // I2C interface port
@@ -75,7 +76,9 @@ typedef struct s_app {
     uint16_t        note;
     bool            pentatonic;
     char            note_to_oled[3];
-}t_app;
+} t_app;
 
+void uart_print_nl();
+void uart_printstr(char *str);
 
 #endif

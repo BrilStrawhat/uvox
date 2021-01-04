@@ -19,7 +19,6 @@ static void init_timer_chanel(ledc_timer_config_t *ledc_timer,
     };
     ledc_timer_config(ledc_timer);
     ledc_channel_config(ledc_channel);
-    ledc_fade_func_install(0);
 
 }
 
@@ -52,21 +51,22 @@ void leds_on(void *arg) {
     init_timer_chanel(&ledc_timer[0], &ledc_channel[0], LEDC_HS_CH0_GPIO, LEDC_HS_CH0_CHANNEL);
     init_timer_chanel(&ledc_timer[1], &ledc_channel[1], LEDC_HS_CH1_GPIO, LEDC_HS_CH0_CHANNEL);
     init_timer_chanel(&ledc_timer[2], &ledc_channel[2], LEDC_HS_CH2_GPIO, LEDC_HS_CH0_CHANNEL);
+    ledc_fade_func_install(0);
 
     while(1) {
         printf("nota for led = %d\n", (int) app->note);
-
         pwm_leds(&ledc_channel[0], app->acclr[0]);
         vTaskDelay(LEDS_DELAY / portTICK_PERIOD_MS);
     }
 }
 
 int8_t leds_off(t_app *app, char **argv) {
-    if(!argv[1]){
+    if (!argv[1]) {
         if(app->leds_task != NULL) {
             vTaskDelete(app->leds_task);
             app->leds_task = NULL;
         }
+        ledc_fade_func_uninstall();
         ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_26, GPIO_MODE_INPUT));
         ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_27, GPIO_MODE_INPUT));
         ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_33, GPIO_MODE_INPUT));
