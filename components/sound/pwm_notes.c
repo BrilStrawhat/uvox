@@ -88,7 +88,6 @@ void pwm_note_task(void *arg) {
     t_app *app = (t_app *) arg;
     uint16_t old_note = 0;
     int16_t duty = 0;
-    uint16_t delay = 500;
     uint8_t io_num;
 
     while (1) {
@@ -104,13 +103,19 @@ void pwm_note_task(void *arg) {
             send_to_oled(display, app->note_to_oled, NULL); // NULL - for duty
             old_note = app->note;
         }
+        //todo check delay
         while (xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
-            if (io_num == GPIO_INPUT_IO_0 && delay < 65500)
-                delay += 50;
-            else if (delay > 0)
-                delay -= 50;
+            printf("delay = %d\n", app->delay);
+            if (io_num == GPIO_INPUT_IO_0 && app->delay < 65500) {
+                printf("++++++++++++\n");
+                app->delay += 50;
+            }
+            else if (app->delay > 0) {
+                printf("-----------------\n");
+                app->delay -= 50;
+            }
         }
-        vTaskDelay(delay/ portTICK_PERIOD_MS);
+        vTaskDelay(app->delay / portTICK_PERIOD_MS);
     }
 
 }

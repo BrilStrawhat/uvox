@@ -14,6 +14,7 @@
 
 
 #include "components.h"
+#include "buttons.h"
 
 void data_to_oled(void *arg);
 void send_to_oled(t_display *display, char *str1, char *str2);

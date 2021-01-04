@@ -74,8 +74,10 @@ typedef struct s_app {
     TaskHandle_t	acclr_task;
     int16_t         acclr[3];
     uint16_t        note;
+    uint16_t        delay;
     bool            pentatonic;
     char            note_to_oled[3];
+    bool            del_oled_tsk;
 } t_app;
 
 void uart_print_nl();

@@ -10,11 +10,16 @@ void data_to_oled(void *arg) {
         return;
 
     while (1) {
-        if (old_note != app->note) {
-            oled_clear(display);
-            send_to_oled(display, app->note_to_oled, NULL); // NULL - for duty
-            old_note = app->note;
+        if(!app->del_oled_tsk) {
+            if (old_note != app->note) {
+                oled_clear(display);
+                send_to_oled(display, app->note_to_oled, NULL); // NULL - for duty
+                old_note = app->note;
+            }
         }
-        vTaskDelay(100/ portTICK_PERIOD_MS);
+        else {
+            free(display);
+        }
+        vTaskDelay(app->delay/ portTICK_PERIOD_MS);
     }
 }

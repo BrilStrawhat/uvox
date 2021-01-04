@@ -13,6 +13,7 @@
 
 #include "mx_function.h"
 #include "components.h"
+#include "accelerometer.h"
 #include "leds.h"
 #include "sound.h"
 #include "buttons.h"

@@ -11,6 +11,7 @@ void init_struct(t_app *app) {
     app->note = 0;
     memset(&app->note_to_oled, 0, 3);
     app->pentatonic = 1;
+    app->delay = 500;
 }
 
 void app_main(void) {
@@ -24,20 +25,15 @@ void app_main(void) {
                 app, 4, NULL);
     xTaskCreate(&read_acceleration_task, "read_acceleration_task",
                 2048u, app, 1, &app->acclr_task);
-
-//    xTaskCreate(&data_to_oled, "data_to_oled",
-//                2048u, app, 3, &app->oled_task);
     xTaskCreate(&pwm_note_task, "pwm_note_task",
                 2048u, app, 1, &app->sound_task);
     xTaskCreate(leds_on, "leds_on", 2048, app, 4, &app->leds_task);
 
-
-
-    esp_err_t ret = nvs_flash_init();
-    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-        ESP_ERROR_CHECK(nvs_flash_erase());
-        ret = nvs_flash_init();
-    }
-    ESP_ERROR_CHECK(ret);
-    wifi_connect_nvs();
+//    esp_err_t ret = nvs_flash_init();
+//    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+//        ESP_ERROR_CHECK(nvs_flash_erase());
+//        ret = nvs_flash_init();
+//    }
+//    ESP_ERROR_CHECK(ret);
+//    wifi_connect_nvs();
 }
