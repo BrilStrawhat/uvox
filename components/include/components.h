@@ -20,6 +20,7 @@
 #include "driver/i2c.h"
 #include "driver/ledc.h"
 #include "driver/uart.h"
+#include "esp_log.h"
 
 ///////////////////////////////////////////////////
 #define ERR_COMM_NOT_FOUND              "\n\x1b[31mrtos: command not found\n\r\x1b[0m"
@@ -76,7 +77,7 @@ typedef struct s_app {
     uint16_t        note;
     uint16_t        delay;
     bool            pentatonic;
-    char            note_to_oled[3];
+    char            note_to_oled[4];
     bool            del_oled_tsk;
     int             duty;
 } t_app;

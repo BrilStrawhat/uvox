@@ -1,5 +1,8 @@
 #include "accelerometer.h"
 
+static const char *TAG = "ACCLR: ";
+
+
 static void print_error(char *str) {
     write(2, str, strlen(str));
 }
@@ -64,11 +67,11 @@ void read_acceleration_task(void* arg) {
 
     while (1) {
         read_acceleration(spi, app->acclr);
-//        printf("xyz %d      %d      %d\n", (int) app->acclr[0], (int) app->acclr[1], (int) app->acclr[2]);
+       ESP_LOGI(TAG, "xyz %d      %d      %d",
+                (int) app->acclr[0], (int) app->acclr[1], (int) app->acclr[2]);
 
         app->note = (app->pentatonic == 1) ? (pentatonic_mode(app->acclr[0], app->note_to_oled))
                 : (chromatic_mode(app->acclr[0], app->note_to_oled));
-//        printf("NOTE = %s\n", app->note_to_oled);
         vTaskDelay(10/ portTICK_PERIOD_MS);
     }
 }

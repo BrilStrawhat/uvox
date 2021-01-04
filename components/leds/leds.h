@@ -23,6 +23,5 @@
 
 int8_t leds_off(t_app *app, char **argv);
 void leds_on(void *arg);
-//void pwm_leds(int16_t  duty);
 
 #endif
