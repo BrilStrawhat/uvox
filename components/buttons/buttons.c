@@ -17,24 +17,6 @@ static void IRAM_ATTR gpio_isr_handler(void *arg) {
     xQueueSendFromISR(gpio_button_evt_queue, &gpio_num, NULL);
 }
 
-// static void button_task(void *arg) {
-    // uint32_t io_num;
-
-    // for(;;) {
-        // if(xQueueReceive(gpio_button_evt_queue, &io_num, portMAX_DELAY)) {
-            // if (io_num == GPIO_INPUT_IO_0) {
-                // while(gpio_get_level(GPIO_INPUT_IO_0) == 0) {
-                    // xTaskNotifyGiveIndexed(accelerometer_task_handler, 0);
-                // } 
-                // // for(int i = 0; gpio_get_level(GPIO_INPUT_IO_0) == 0; i++)
-            // }
-            // else {
-                // gpio_set_level(GPIO_OUTPUT_IO_1, led_status2);
-            // }
-        // }
-    // }
-// }
-
 void buttons_init(void) {
     esp_err_t rc = ESP_OK;
     char buf[BUF_LEN];
@@ -70,5 +52,26 @@ void buttons_init(void) {
         printf("line %d: %d, %s\n", (__LINE__ - 1), rc, esp_err_to_name_r(rc, buf, BUF_LEN));
         return;
     }
+}
+
+int change_delay_cmd(t_app *app, char **argv) {
+    if (argv[1]) {
+        uint16_t result = atoi(argv[1]);
+        if (result >= 50 && result <= 60000) {
+            app->delay = result;
+            xQueueSend(gpio_button_evt_queue, &result, portMAX_DELAY);
+            return 0;
+        }
+        else {
+            uart_printstr(ERR_BAD_ARG);
+        }
+    }
+    else if (!argv[1]) {
+        uart_printstr(ERR_ADD_PARAM);
+    }
+    else {
+        uart_printstr(ERR_TO_MANY_ARG);
+    }
+    return -1;
 }
 

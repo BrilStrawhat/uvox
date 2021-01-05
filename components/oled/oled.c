@@ -101,8 +101,6 @@ void oled_initial_settings(t_display *display) {
 }
 
 void oled_config(t_display *display) {
-    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_32, GPIO_MODE_OUTPUT));
-    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_32, 1));
     vTaskDelay(1000 / portTICK_PERIOD_MS);
 
     i2c_config_t i2c_config = {
@@ -119,7 +117,9 @@ void oled_config(t_display *display) {
     display->port = I2C_PORT;
     oled_initial_settings(display);
 }
+
 void oled_init(t_display *display) {
+
     if(!display)
         return;
     ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_32, GPIO_MODE_OUTPUT));
@@ -132,3 +132,4 @@ void oled_init(t_display *display) {
     oled_clear(display);
     oled_update(display, NULL, NULL);
 }
+

@@ -1,39 +1,37 @@
-#ifndef _UART_CONSOLE_H_
-#define _UART_CONSOLE_H_
+#ifndef UART_CONSOLE
+#define UART_CONSOLE
 
-#include <string.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "driver/uart.h"
-#include "esp_log.h"
-#include "list.h"
+#define UART_TX_PIN                     17
+#define UART_RX_PIN                     16
 
-#define UART_NUM UART_NUM_1
-#define UART_TX     17
-#define UART_RX     16
 
-#define BUF_SIZE    256
-#define CMD_SIZE    255
+#define SIZE_STR_FOR_EXECUTE            120
+#define ENTER                           13
+#define MAX_SIZE_BUF                    120
+#define DELETE                          127
+#define BUF_SIZE                        1024
 
-#define LEFT_ARR    4479771 // if read uart response as 4 byte int
-#define RIGHT_ARR   4414235 // if read uart response as 4 byte int
+#include "mx_function.h"
+#include "components.h"
+#include "accelerometer.h"
+#include "leds.h"
+#include "sound.h"
+#include "buttons.h"
+#include "wifi.h"
 
-#define DEL_SEQ     "\e[P"
-#define LEFT_SEQ    "\e[D"
-#define RIGHT_SEQ   "\e[C"
+
 #define NL_SEQ      "\eE"
 
-typedef struct s_console_cmd {
-    void *(*cmd_handler)(void *argc);
-    char *cmd_name;
-} t_console_cmd;
+typedef struct s_cli {
+    uint8_t         *buf;
+    char            *str_for_execute;
+    int             iterator;
+    int             len;
+} t_cli;
 
-void init_uart_console(uart_config_t *uart_config, uint8_t console_priority);
+void data_from_uart(void *data);
+int command_execution(t_cli *cli,  t_app *app);
+void simple_simbols_handler(t_cli *cli, t_app *app);
+_Bool printable_char(char *buf);
 
-void clear_cmd_list();
-
-void add_cmd(char *cmd_name, void *(*cmd_handler)(void *argc));
-
-void uart_printstr(char *str);
-void uart_print_nl();
-#endif 
+#endif

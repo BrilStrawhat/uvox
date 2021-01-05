@@ -1,5 +1,7 @@
 #include "accelerometer.h"
-#include "buttons.h"
+
+static const char *TAG = "ACCLR: ";
+
 
 static void print_error(char *str) {
     write(2, str, strlen(str));
@@ -58,43 +60,18 @@ static void read_acceleration (spi_device_handle_t spi, int16_t *accs) {
 
 
 
-void read_acceleration_task(void* pvParameters) {
-    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_26, GPIO_MODE_OUTPUT));
-    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_27, GPIO_MODE_OUTPUT));
-    ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_33, GPIO_MODE_OUTPUT));
-    t_display *display = malloc(sizeof(t_display));
-    oled_init(display);
-    int16_t accs[3];
-    spi_device_handle_t spi = (spi_device_handle_t) pvParameters;
-    char *note_to_oled = malloc(2);
-    uint16_t note = 0;
-    uint16_t old_note = 0;
-    uint16_t delay = 500;
-    uint8_t io_num;
-
+void read_acceleration_task(void* arg) {
+    spi_device_handle_t spi;
+    accel_config(&spi);
+    t_app *app = (t_app *)arg;
 
     while (1) {
-        memset(note_to_oled, 0, 2);
-        read_acceleration(spi, accs);
-        printf("xyz %d      %d      %d\n", (int) accs[0], (int) accs[1], (int) accs[2]);
-//        note = chromatic_mode((int)accs[0], &note_to_oled);
+        read_acceleration(spi, app->acclr);
+        ESP_LOGI(TAG, "xyz %d      %d      %d",
+                (int) app->acclr[0], (int) app->acclr[1], (int) app->acclr[2]);
 
-        note = pentatonic_mode((accs[0]), &note_to_oled);
-        if (old_note != note) {
-            notes(note, accs[1]);
-            pwm_leds(((int) accs[0]));
-            oled_clear(display);
-            send_to_oled(display, note_to_oled, NULL); // NULL - for duty
-            old_note = note;
-        }
-        while (xQueueReceive(gpio_button_evt_queue, &io_num, 0)) {
-            if (io_num == GPIO_INPUT_IO_0 && delay < 65500)
-                delay += 50;
-            else if (delay > 0)
-                delay -= 50;
-        }
-        vTaskDelay(delay / portTICK_PERIOD_MS);
+        app->note = (app->pentatonic == 1) ? (pentatonic_mode(app->acclr[0], app->note_to_oled))
+                : (chromatic_mode(app->acclr[0], app->note_to_oled));
+        vTaskDelay(10/ portTICK_PERIOD_MS);
     }
 }
-
-
