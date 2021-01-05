@@ -239,19 +239,18 @@ void *wifi_sta_connect(void *arg) {
         char *passwd = NULL;
         char *costil = (char*)arg;
 
-        for (; *costil || *costil != ' '; costil++);
+        for (; *costil != ' '; costil++);
         costil++;
-        printf("costil %s\n", costil);
 
-        if (strchr((char*)arg, '"') != NULL) {
+        if (strchr(costil, '"') != NULL) {
             delim = '"';
-            ssid = strtok_r((char*)arg, &delim, &saveptr);
+            ssid = strtok_r(costil, &delim, &saveptr);
             passwd = strtok_r(NULL, &delim, &saveptr); // idk why, but I must put result somewhere or it would not works
             passwd = strtok_r(NULL, &delim, &saveptr); 
         }
         else {
             delim = ' ';
-            ssid = strtok_r((char*)arg, &delim, &saveptr);
+            ssid = strtok_r(costil, &delim, &saveptr);
             passwd = strtok_r(NULL, &delim, &saveptr);
         }
 
