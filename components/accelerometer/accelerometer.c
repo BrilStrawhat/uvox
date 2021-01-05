@@ -65,6 +65,7 @@ void read_acceleration_task(void* arg) {
     accel_config(&spi);
     t_app *app = (t_app *)arg;
 
+    esp_log_level_set(TAG, ESP_LOG_NONE);
     while (1) {
         read_acceleration(spi, app->acclr);
         ESP_LOGI(TAG, "xyz %d      %d      %d",
