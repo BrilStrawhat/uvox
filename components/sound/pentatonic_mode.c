@@ -70,6 +70,7 @@ static int line_2(int16_t acclr_data, char *note) {
 
 int pentatonic_mode(int16_t acclr_data, char *note) {
     int frequency = 0;
+    esp_log_level_set(TAG, ESP_LOG_NONE);
 
     frequency = line_1(acclr_data, note);
     if (!frequency)

@@ -116,7 +116,7 @@ int command_execution(t_cli *cli,  t_app *app) {
         else if (!strcmp("acclr_mode", argv[0])) {
             vTaskResume(app->acclr_task);
         }
-        else if(!strcmp("wifi_sta_connect", argv[0])) {
+        else if(!strcmp(WIFI_STA_CONNECT_COMMAND , argv[0])) {
             wifi_sta_connect((void *)cli->str_for_execute); // 1 аргумент - команда
         }
         else if(!strcmp("clear", argv[0]) && !argv[1]) {

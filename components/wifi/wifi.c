@@ -228,15 +228,6 @@ void *wifi_sta_connect(void *arg) {
     if (arg == NULL || *(char*)arg == '\0') {
         return NULL;
     }
-    else if (!strcmp(WIFI_STA_CONNECT_COMMAND, (char*)arg)) {
-        uart_print_nl();
-        uart_printstr("wifi_connect usage: ssid passwd");
-        return NULL;
-    }
-    else if (!strcmp("kk", (char*)arg)) {
-        wifi_init_sta("TP-Link_FF9C", "01431629");
-        return NULL;
-    }
     else if (!strcmp("unit", (char*)arg)) {
         wifi_init_sta("ucode student", ">#ucodeworld");
         return NULL;
@@ -246,6 +237,11 @@ void *wifi_sta_connect(void *arg) {
         char *saveptr = NULL;
         char *ssid = NULL;
         char *passwd = NULL;
+        char *costil = (char*)arg;
+
+        for (; *costil || *costil != ' '; costil++);
+        costil++;
+        printf("costil %s\n", costil);
 
         if (strchr((char*)arg, '"') != NULL) {
             delim = '"';
