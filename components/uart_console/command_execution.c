@@ -83,7 +83,7 @@ int command_execution(t_cli *cli,  t_app *app) {
     char **argv = mx_strsplit(cli->str_for_execute, ' ');
     int argc = mx_arr_size(argv);
 
-        if (argc) {
+    if (argc) {
         if(!strcmp("help", argv[0])) {
             print_command_list();
         }
@@ -106,7 +106,7 @@ int command_execution(t_cli *cli,  t_app *app) {
             sound_off(app);
         }
         else if (!strcmp("sound_on", argv[0])) {
-           sound_on(app);
+            sound_on(app);
         }
         else if (!strcmp("d", argv[0]) && argv[1]) {
             app->duty = atoi(argv[1]);
