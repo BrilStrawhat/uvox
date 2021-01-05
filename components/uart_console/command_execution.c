@@ -2,7 +2,7 @@
 
 static void print_command_list() {
     char *arr_com[10];
-    arr_com[0] = "\n\x1b[36mleds_on\x1b[0m\n\r";
+    arr_com[0] = "\x1b[36mleds_on\x1b[0m\n\r";
     arr_com[1] = "\x1b[36mleds_off\x1b[0m\n\r";
     arr_com[2] = "\x1b[36mset_note\x1b[0m\n\r";
     arr_com[3] = "\x1b[36mset_temp\x1b[0m\n\r";
