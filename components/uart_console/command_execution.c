@@ -2,7 +2,7 @@
 
 static void print_command_list() {
     char *arr_com[10];
-    arr_com[0] = "\x1b[36mleds_on\x1b[0m\n\r";
+    arr_com[0] = "\n\x1b[36mleds_on\x1b[0m\n\r";
     arr_com[1] = "\x1b[36mleds_off\x1b[0m\n\r";
     arr_com[2] = "\x1b[36mset_note\x1b[0m\n\r";
     arr_com[3] = "\x1b[36mset_temp\x1b[0m\n\r";
@@ -63,14 +63,12 @@ void sound_on(t_app *app) {
         vTaskSuspend(app->oled_task);
     }
     ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_25, GPIO_MODE_OUTPUT));
-//    vTaskResume(app->sound_task);
-    xTaskCreate(&pwm_note_task, "pwm_note_task",
-                2048u, app, 1, &app->sound_task);
+    vTaskResume(app->sound_task);
 }
 void sound_off(t_app *app) {
     vTaskSuspend(app->sound_task);
+
     ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_25, GPIO_MODE_INPUT));
-        //todo вимкнути pwm на gpio25 так само як і на ледах
     if(!app->oled_task) {
         xTaskCreate(&data_to_oled, "data_to_oled", 2048u, app, 3, &app->oled_task);
     }
@@ -127,11 +125,12 @@ int command_execution(t_cli *cli,  t_app *app) {
             uart_write_bytes( UART_NUM_1, ERR_COMM_NOT_FOUND, sizeof(ERR_COMM_NOT_FOUND));
             exit_status = EXIT_FAILURE;
         }
+        mx_free_array(argv, argc);
     }
     else {
         exit_status = EXIT_FAILURE;
     }
-    free(argv);
+
     return exit_status;
 }
 

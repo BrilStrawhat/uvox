@@ -23,10 +23,10 @@
 #include "esp_log.h"
 
 ///////////////////////////////////////////////////
-#define ERR_COMM_NOT_FOUND              "\n\x1b[31mrtos: command not found\n\r\x1b[0m"
-#define ERR_TO_MANY_ARG                 "\n\x1b[31mrtos: too many arguments\n\r\x1b[0m"
-#define ERR_BAD_ARG                     "\n\x1b[31mrtos: bad argument\n\r\x1b[0m"
-#define ERR_ADD_PARAM                   "\n\x1b[31mrtos: please add parameters\n\r\x1b[0m"
+#define ERR_COMM_NOT_FOUND              "\x1b[31mrtos: command not found\n\r\x1b[0m"
+#define ERR_TO_MANY_ARG                 "\x1b[31mrtos: too many arguments\n\r\x1b[0m"
+#define ERR_BAD_ARG                     "\x1b[31mrtos: bad argument\n\r\x1b[0m"
+#define ERR_ADD_PARAM                   "\x1b[31mrtos: please add parameters\n\r\x1b[0m"
 
 
 ////////////////////////////////////////////////////        notes
@@ -78,7 +78,6 @@ typedef struct s_app {
     uint16_t        delay;
     bool            pentatonic;
     char            note_to_oled[4];
-    bool            del_oled_tsk;
     int             duty;
 } t_app;
 

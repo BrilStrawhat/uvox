@@ -53,6 +53,12 @@ char **mx_strsplit(const char *s, char c) {
     return (arr);
 }
 
+void mx_free_array(char **argv, int argc) {
+    for(int i = 0; i < argc; i++) {
+        free(argv[i]);
+    }
+}
+
 
 
 
