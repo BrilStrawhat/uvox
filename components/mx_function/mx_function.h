@@ -34,5 +34,5 @@ int mx_list_size(t_list *list);
 t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *));
 char **mx_strsplit(const char *s, char c);
 int mx_arr_size(char **arr);
-
+void mx_free_array(char **argv, int argc);
 #endif

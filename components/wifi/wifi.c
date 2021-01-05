@@ -228,15 +228,6 @@ void *wifi_sta_connect(void *arg) {
     if (arg == NULL || *(char*)arg == '\0') {
         return NULL;
     }
-    else if (!strcmp(WIFI_STA_CONNECT_COMMAND, (char*)arg)) {
-        uart_print_nl();
-        uart_printstr("wifi_connect usage: ssid passwd");
-        return NULL;
-    }
-    else if (!strcmp("kk", (char*)arg)) {
-        wifi_init_sta("TP-Link_FF9C", "01431629");
-        return NULL;
-    }
     else if (!strcmp("unit", (char*)arg)) {
         wifi_init_sta("ucode student", ">#ucodeworld");
         return NULL;
@@ -246,16 +237,20 @@ void *wifi_sta_connect(void *arg) {
         char *saveptr = NULL;
         char *ssid = NULL;
         char *passwd = NULL;
+        char *costil = (char*)arg;
 
-        if (strchr((char*)arg, '"') != NULL) {
+        for (; *costil != ' '; costil++);
+        costil++;
+
+        if (strchr(costil, '"') != NULL) {
             delim = '"';
-            ssid = strtok_r((char*)arg, &delim, &saveptr);
+            ssid = strtok_r(costil, &delim, &saveptr);
             passwd = strtok_r(NULL, &delim, &saveptr); // idk why, but I must put result somewhere or it would not works
             passwd = strtok_r(NULL, &delim, &saveptr); 
         }
         else {
             delim = ' ';
-            ssid = strtok_r((char*)arg, &delim, &saveptr);
+            ssid = strtok_r(costil, &delim, &saveptr);
             passwd = strtok_r(NULL, &delim, &saveptr);
         }
 

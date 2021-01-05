@@ -33,10 +33,13 @@ void pwm_note_task(void *arg) {
     int16_t duty = 0;
     uint8_t io_num;
 
+    esp_log_level_set(TAG, ESP_LOG_NONE);
     while (1) {
             duty = app->acclr[1];
             if (duty < 0)
                 duty *= -2;
+            else if (duty == 0)
+                duty = 16;
             else
                 duty *= 16;
             ESP_LOGI(TAG,"DUTY = %d", duty);

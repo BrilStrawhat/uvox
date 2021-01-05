@@ -3,7 +3,6 @@
 static void handling_ENTER(t_cli *app) {
     uart_write_bytes( UART_NUM_1, "\n\r", sizeof( "\n" ));
     app->iterator = 0;
-    memset(app->str_for_execute, 0, SIZE_STR_FOR_EXECUTE );
 }
 
 static void handling_DELETE(t_cli *cli) {
@@ -43,8 +42,9 @@ void simple_simbols_handler(t_cli *cli, t_app *app) {
             handling_DELETE(cli);
         }
         else if (cli->buf[0] == ENTER) {
-            command_execution(cli, app);
             handling_ENTER(cli);
+            command_execution(cli, app);
+            memset(cli->str_for_execute, 0, SIZE_STR_FOR_EXECUTE );
         }
         else if (printable_char((char *) cli->buf)) {
             cli->iterator = cli->iterator + 1;

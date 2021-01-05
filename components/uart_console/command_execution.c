@@ -63,14 +63,12 @@ void sound_on(t_app *app) {
         vTaskSuspend(app->oled_task);
     }
     ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_25, GPIO_MODE_OUTPUT));
-//    vTaskResume(app->sound_task);
-    xTaskCreate(&pwm_note_task, "pwm_note_task",
-                2048u, app, 1, &app->sound_task);
+    vTaskResume(app->sound_task);
 }
 void sound_off(t_app *app) {
     vTaskSuspend(app->sound_task);
+
     ESP_ERROR_CHECK(gpio_set_direction(GPIO_NUM_25, GPIO_MODE_INPUT));
-        //todo вимкнути pwm на gpio25 так само як і на ледах
     if(!app->oled_task) {
         xTaskCreate(&data_to_oled, "data_to_oled", 2048u, app, 3, &app->oled_task);
     }
@@ -85,7 +83,7 @@ int command_execution(t_cli *cli,  t_app *app) {
     char **argv = mx_strsplit(cli->str_for_execute, ' ');
     int argc = mx_arr_size(argv);
 
-        if (argc) {
+    if (argc) {
         if(!strcmp("help", argv[0])) {
             print_command_list();
         }
@@ -108,7 +106,7 @@ int command_execution(t_cli *cli,  t_app *app) {
             sound_off(app);
         }
         else if (!strcmp("sound_on", argv[0])) {
-           sound_on(app);
+            sound_on(app);
         }
         else if (!strcmp("d", argv[0]) && argv[1]) {
             app->duty = atoi(argv[1]);
@@ -116,7 +114,7 @@ int command_execution(t_cli *cli,  t_app *app) {
         else if (!strcmp("acclr_mode", argv[0])) {
             vTaskResume(app->acclr_task);
         }
-        else if(!strcmp("wifi_sta_connect", argv[0])) {
+        else if(!strcmp(WIFI_STA_CONNECT_COMMAND , argv[0])) {
             wifi_sta_connect((void *)cli->str_for_execute); // 1 аргумент - команда
         }
         else if(!strcmp("clear", argv[0]) && !argv[1]) {
@@ -127,11 +125,12 @@ int command_execution(t_cli *cli,  t_app *app) {
             uart_write_bytes( UART_NUM_1, ERR_COMM_NOT_FOUND, sizeof(ERR_COMM_NOT_FOUND));
             exit_status = EXIT_FAILURE;
         }
+        mx_free_array(argv, argc);
     }
     else {
         exit_status = EXIT_FAILURE;
     }
-    free(argv);
+
     return exit_status;
 }
 

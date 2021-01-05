@@ -15,6 +15,7 @@
 #include "lwip/sys.h"
 
 #include "uart_console.h"
+#include "components.h"
 
 #define WIFI_STA_CONNECT_COMMAND "aa"
 #define MAX_RECONNECT_TRY     1
